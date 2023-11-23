@@ -1,14 +1,39 @@
 ########################### MATRIX #############################
+
 TRANSPOSITION = is created by turning/swapping rows into columns and columns into rows.
 
 mx1 = column vector.
 1xn = row vector.
 
-All matrix vector without the transposition sign ARE column vector... they will only be a row vector when it han the transposition sign.
+All matrix vector without the transposition sign ARE column vector... they will only be a row vector when it has the transposition sign.
+
+DIAGONAL MATRIX = all elements outside the main diagonal are zero. The main diagonal can be ani number, even zero. The all zero matrix is a special type of diagonal matrix
+
+TRIANGULAR MATRIX = is upper triangular if the upper of the main diagonal are numbers and the bottom is all zero, end lower triangular otherwise.
+
+IDENTITY MATRIX = is a Diagonal matrix where all elements in the main diagonal are = 1. Is denoted by E.
+
+SIMETRIC MATRIX = If you transpose a matrix and it maintains the same ->  A = At. The matrix must be square!
+Every square diagonal and all square Identy are symmetric.
+
+SKEW-SIMETRIC =  A = -At
+
+DECOMPOSITION THEOREM: ANY Square matrix A can be represented by the sum of A = B+C where B is symetric and C is skew-symetric of A.
+B= 0,5*(A+At)
+C= 0,5*(A-At)
+
+ADITION OF MATRIX = just add elements of the same position.
+
+IN ADDITION THOSE LAWS APPLIE:
+*COMMUTATIVE: A+B= B+A
+*ASSOCIATIVE: A+(B+C) = (A+B)+C
+*ZERO MATRIX IS THE NEUTRAL ELEMENT IN ADITION: A+0 = O+A = A
 
 
-    
-    
+SCALAR MULTIPLICATION = it just multiply each element of the matrix by a scalar (any real number different then zero). The following laws applied:
+*ASSOCIATIVE: (x*y)*A = x* (y*A)
+*DISTRIBUTIVE: (x+y)*A = x*A+ y*A
+or     x*(A+B) = x*A + x*B    
     
     Grafo: Um grafo é uma coleção de vértices (ou nós) e arestas que conectam pares de vértices. Os grafos podem ser direcionados (arestas têm uma direção) ou não direcionados.
 
