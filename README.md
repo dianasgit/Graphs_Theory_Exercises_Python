@@ -1,3 +1,15 @@
+########################### MATRIX #############################
+TRANSPOSITION = is created by turning/swapping rows into columns and columns into rows.
+
+mx1 = column vector.
+1xn = row vector.
+
+All matrix vector without the transposition sign ARE column vector... they will only be a row vector when it han the transposition sign.
+
+
+    
+    
+    
     Grafo: Um grafo é uma coleção de vértices (ou nós) e arestas que conectam pares de vértices. Os grafos podem ser direcionados (arestas têm uma direção) ou não direcionados.
 
     Vértice: Um ponto em um grafo.
