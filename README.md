@@ -1,4 +1,4 @@
-########################### MATRIX #############################
+# MATRIX #
 
 TRANSPOSITION = is created by turning/swapping rows into columns and columns into rows.
 
@@ -64,8 +64,7 @@ MULTIPLICATION OF MATRICES: The number of columns of the first must be the same 
 * (x*A)t = x*At
 * (A*B)t = Bt * At
 * Et = E
-    
-    
+
 
     ********************INVERSE/REGULAR MATRICES ***********************
 
@@ -76,7 +75,7 @@ MULTIPLICATION OF MATRICES: The number of columns of the first must be the same 
   IF THE INVERSE MATRIX EXISTS THE MATRIX IS CALLED INVERTIBLE OU REGULAR. If not if called non-invertible or singular.
 
     IF THE DETERMINANTE IS DIFFERENT THAN ZERO THE MATRIX IS INVERTIBLE, because it represent that the rows or columns of the matrix are linearly independent.
-      If the determiannte = 0 than the matrix is NOT invertible.
+      If the determinant = 0 than the matrix is NOT invertible.
 
     1  2  3       1  2  3  | 1  2         the determinante is=   x-y
     4  5  6       4  5  6  | 4  5          1*5*9  + 2*6*7 + 3*4*8 = x
@@ -92,127 +91,140 @@ In 2x2 matrices to calculate the inverse (if the det != 0) just exchange the ele
 **SIMETRICAL ENCRYPTION PROCEDURE = multiply a message by a matrix to encrypt and multiply the result by the inverse of the matrix key to decrypt. 
 ***
 
+ ***********ORTHOGONAL MATRICES *************
+        A square matrix is called oRTHOGONAL IF, AND ONLY IF A^-1 = At.. For a Orthogonal matrix A, At is also orthogonal... So ALSO APPLIES  A * At = A * A^-1 = E
+  IF the matrix is SIMETRIC = A * A =E
+
+        
+
+# _____________INTRODUCTION TO GRAPHS___________ #
+
+Graph: A graph is a collection of vertices (or nodes) and edges that connect pairs of vertices. Graphs can be directed (edges have a direction) or undirected.
+
+EDGE: A line that connects vertices (nodes) in a graph;
+
+UNDIRECTED Graph: A graph in which edges do not have a specific direction;  G = ( V , E) whit a set of finite nodes V={v1,v2,...vn} and set of edges E={e1,e2,...em}. V CAN NOT BE AN EMPTY SET, it need at least onde node. 
+
+DIRECTED GRAPH: A graph in which each edge has a direction, indicating the order of connected vertices;
+
+ISOLATED NODE= a node that is not connected to any other node by an edge.
+
+ADJACENT NODES / NEIGHBORS: Nodes that are directly connected by the same edge. In a loop, the node is its own neighbor. 
+
+INCIDENT EDGE: the edge that connect a node(s) in question. You say, edge E is incident to the node v1 and v2 ...
+
+PARALLEL EDGE or MULTIPLE EDGER: Connect the same two nodes;
+
+LOOP: the edge that connect a node to itself
+
+** SIMPLE GRAPH: graph withOUT parallel edges (multiple edges) and withOUT Loops.
+
+FINITE GRAPH: A graph with a finite number of nodes and edges.
+
+INCIDENCE FUNCTION: The nodes or nod that is connected to an edge. Write it as:   e1 |-> {v2, v4)  ; e2|-> {v5}loop
+
+DEGREE OF A NODE or VALENCE or NODE DEGREE: the total os edger that are incident to a node, or START in that node. Isolated nodes have degree 0. Loops count 2. 
+
+REGULAR GRAPH = a graph where every node has the same degree.
+
+*** HANDSHAKING LEMMA: Euler state that: In any FINITE AND UNDIRECTED AND SIMPLE graph the sum of all nodes degrees is twice the number of edges.
+THAN THE SUM OF ALL NODES DEGREES MUST BE EVEN. AND in every finite, undirectec and simple graph must exist at leat two nodes with the same degree.
+Exemple is impossible to draw a graph with 7 nodes whet all nodes has degree 3 .. because de sum will be 21, an odd number.
+Is also impossible draw a graph with 4 nodes with the respective degrees (1 , 2 , 3 , 4) the sum is even, BUT is impossible because must exist at least two nodes with the same degree.
+
+***ISOMORPHIC GRAPHS: Two graph are called isomorphic if it exists a bijective mapping in each node. They contain the same number of node, edges and degrees. BUT is necessary to make the mapping to guarantee the exact relation of connections, because a graph with the same number of nodes, and edges and degree could not be isomorphic.
 
 
 
+Walk (or Path): A sequence of vertices in which each vertex is connected to the next by an edge in the graph.
 
-    Grafo: Um grafo é uma coleção de vértices (ou nós) e arestas que conectam pares de vértices. Os grafos podem ser direcionados (arestas têm uma direção) ou não direcionados.
+Cycle: A closed walk in a graph where the first and last vertices are the same, and edges are not repeated (except for the edge connecting the first and last vertices).
 
-    Vértice: Um ponto em um grafo.
+Eulerian Cycle: A cycle that traverses all edges of a graph exactly once. The graph must be connected.
 
-    Aresta: Uma linha que conecta dois vértices em um grafo.
+Connected Graph: A graph in which there is at least one path between any pair of vertices.
 
-    Grafo Direcionado: Um grafo no qual cada aresta tem uma direção, indicando a ordem dos vértices conectados.
+Disconnected Graph: A graph consisting of two or more connected components, with no path between these components.
 
-    Grafo Não Direcionado: Um grafo no qual as arestas não têm direção específica.
+Breadth-First Search (BFS): An algorithm for traversing or searching graphs, where you explore all neighbors of a vertex before moving on to the neighbors of neighbors.
 
-    Passeio (ou Caminho): Uma sequência de vértices em que cada vértice é conectado ao próximo por uma aresta no grafo.
+Depth-First Search (DFS): An algorithm for traversing or searching graphs, where you explore as far as possible along each branch before backtracking.
 
-    Ciclo: Um passeio fechado em um grafo, onde o primeiro e o último vértices são iguais, e as arestas não são repetidas (exceto para a aresta que conecta o primeiro e o último vértices).
+Minimum Spanning Tree: In a weighted graph, a minimum spanning tree is a tree that includes all vertices of the graph, with the total weight of edges minimized.
 
-    Ciclo Euleriano: Um ciclo que passa por todas as arestas de um grafo exatamente uma vez. O grafo deve ser conectado.
+Adjacency Matrix: A matrix representing connections between vertices in a graph. In the adjacency matrix, elements indicate whether there is an edge between vertices.
 
-    Grafo Conexo: Um grafo no qual existe pelo menos um caminho entre qualquer par de vértices.
+Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
 
-    Grafo Desconexo: Um grafo que consiste em duas ou mais componentes conectadas, sem caminho entre essas componentes.
+Vertex Degree: The number of edges connected to a vertex.
 
-    Busca em Largura (BFS): Um algoritmo para percorrer ou pesquisar em grafos, onde você explora todos os vizinhos de um vértice antes de passar para os vizinhos dos vizinhos.
+Bipartite Graph: A graph whose vertices can be divided into two sets, such that all edges connect a vertex from one set to the other.
 
-    Busca em Profundidade (DFS): Um algoritmo para percorrer ou pesquisar em grafos, onde você explora o máximo possível ao longo de cada ramo antes de retroceder.
+Dijkstra's Algorithm: An algorithm for finding the shortest paths between a source vertex and all other vertices in a weighted graph.
 
-    Árvore Geradora Mínima: Em um grafo ponderado, uma árvore geradora mínima é uma árvore que inclui todos os vértices do grafo, com o peso total das arestas sendo minimizado.
+Weighted Graph: A graph in which each edge has an associated weight reflecting some measure, such as distance, cost, time, etc.
 
-    Matriz de Adjacência: Uma matriz que representa as conexões entre vértices em um grafo. Na matriz de adjacência, os elementos indicam se existe ou não uma aresta entre os vértices.
+Hamiltonian Cycle: A cycle that visits each vertex in a graph exactly once, but not necessarily all edges.
 
-    Matriz de Incidência: Uma matriz que representa as conexões entre vértices e arestas em um grafo.
+Spanning Tree: A substructure of a graph that is a tree, connecting all vertices of the original graph.
 
-    Grau de um Vértice: O número de arestas conectadas a um vértice.
+Eulerian Graph: A graph that contains an Eulerian cycle. Each vertex must have an even degree.
 
-    Grafo Bipartido: Um grafo cujos vértices podem ser divididos em dois conjuntos, de modo que todas as arestas conectam um vértice de um conjunto ao outro.
+Vertex Neighborhood: The set of vertices adjacent to a specific vertex.
 
-    Algoritmo de Dijkstra: Um algoritmo para encontrar os caminhos mais curtos entre um vértice de origem e todos os outros vértices em um grafo ponderado.
-    Grafo Ponderado: Um grafo no qual cada aresta tem um peso associado que reflete alguma medida, como distância, custo, tempo, etc.
+Shortest Path: The path with the smallest weight between two vertices in a weighted graph.
 
-Ciclo Hamiltoniano: Um ciclo que visita cada vértice em um grafo exatamente uma vez, mas não necessariamente passa por todas as arestas.
+Cyclic Graph: A graph that contains at least one cycle.
 
-Árvore de Abrangência (Spanning Tree): Uma subestrutura de um grafo que é uma árvore, conectando todos os vértices do grafo original.
+Minimum Cut: A set of edges whose removal divides a graph into two connected components.
 
-Grafo Euleriano: Um grafo que contém um ciclo Euleriano. Cada vértice deve ter grau par.
+Maximum Flow: The maximum value of flow that can pass from a source to a destination in a weighted graph.
 
-Vizinhança de um Vértice: O conjunto de vértices adjacentes a um vértice específico.
+Four Color Theorem: States that any planar map can be colored with at most four colors such that adjacent countries have different colors.
 
-Caminho Mínimo: O caminho com o menor peso entre dois vértices em um grafo ponderado.
+Kruskal's Minimum Spanning Tree Theorem: A method for finding a minimum spanning tree in a weighted graph.
 
-Grafo Cíclico: Um grafo que contém pelo menos um ciclo.
+Planar Graph: A graph that can be drawn on a plane without its edges crossing.
 
-Corte Mínimo: Um conjunto de arestas cuja remoção divide um grafo em dois componentes conectados.
+Degree Sequence: A list of the degrees of the vertices in a graph.
 
-Fluxo Máximo: O valor máximo de fluxo que pode passar de uma fonte para um destino em um grafo ponderado.
+Regular Graph: A graph in which all vertices have the same degree.
 
-Teorema das Quatro Cores: Afirma que qualquer mapa plano pode ser colorido com no máximo quatro cores de modo que países adjacentes tenham cores diferentes.
+Directed Acyclic Graph (DAG): A directed graph that does not contain cycles.
 
-Teorema das Árvores Geradoras Mínimas de Kruskal: Um método para encontrar uma árvore geradora mínima em um grafo ponderado.
+Graph Isomorphism: Two graphs are isomorphic if there is a bijective correspondence between their sets of vertices and edges that preserves adjacencies.
 
-Grafo Planar: Um grafo que pode ser desenhado em um plano sem que suas arestas se cruzem.
+Eulerian Path: A walk that traverses each edge of a graph exactly once.
 
-Sequência de Graus: Uma lista dos graus dos vértices de um grafo.
+Game Theory in Graphs: Studies strategies and competitive interactions between different entities in a graph.
 
-Grafo Regular: Um grafo no qual todos os vértices têm o mesmo grau.
+Interval Graph: A graph representing intervals on the real line, where vertices represent intervals and edges indicate overlaps.
 
-Grafo Acíclico Direcionado (DAG): Um grafo direcionado que não contém ciclos.
+Preference Graph: Used to model preference relations between different objects or entities.
 
-Isomorfismo de Grafos: Dois grafos são isomorfos se existe uma correspondência biunívoca entre seus conjuntos de vértices e arestas que preserva as adjacências.
+Subgraph: A graph formed by a subset of vertices and edges from a larger graph.
 
-Percurso Euleriano: Um passeio que percorre cada aresta de um grafo exatamente uma vez.
+Ore's Theorem: A theorem that establishes a sufficient condition for the existence of a Hamiltonian cycle in an undirected graph.
 
-Teoria dos Jogos em Grafos: Estuda estratégias e interações competitivas entre diferentes entidades em um grafo.
+Cayley Graph: A graph associated with a group, where group elements correspond to vertices and group operations correspond to edges.
 
-Grafo Intervalar: Um grafo que representa intervalos na linha real, onde vértices representam intervalos e arestas indicam sobreposições.
+Matroid: An abstract mathematical structure that generalizes fundamental properties of minimum spanning trees and independent sets in graphs.
 
-Grafo de Preferência: Usado para modelar relações de preferência entre diferentes objetos ou entidades.
+Perfect Graph: A graph in which the chromatic number of any subgraph is equal to its maximum clique number.
 
-Subgrafo: Um grafo formado por um subconjunto de vértices e arestas de um grafo maior.
+Chromatic Number: The smallest number of colors needed to color the vertices of a graph such that adjacent vertices have different colors.
 
-    Teorema de Ore: Um teorema que estabelece uma condição suficiente para a existência de um ciclo Hamiltoniano em um grafo não direcionado.
+Interval-Partition Graph: A graph formed by the union of intervals on a real line, where intersection occurs only between interval endpoints.
 
-    Grafo de Cayley: Um grafo associado a um grupo, onde os elementos do grupo correspondem aos vértices e as operações do grupo correspondem às arestas.
+Hyperbolic Graph: A graph used to model complex networks, such as social networks, exhibiting hyperbolic characteristics in their structure.
 
-    Matroide: Uma estrutura matemática abstrata que generaliza propriedades fundamentais de árvores geradoras mínimas e conjuntos independentes em grafos.
+Sparse Graph: Due to the often sparse nature of real-world graphs, representing adjacency and incidence matrices as sparse matrices can save storage space.
 
-    Grafo Perfeito: Um grafo no qual o número cromático de qualquer subgrafo é igual ao seu número máximo de cliques.
+Maximum Flow Theorem: The value of the determinant of a matrix obtained by removing any row and the corresponding column of a Laplacian matrix is equal to the number of minimum spanning trees in the graph.
 
-    Número Cromático: O menor número de cores necessárias para colorir os vértices de um grafo de modo que vértices adjacentes tenham cores diferentes.
-
-    Grafo de Intervalo-Partição: Um grafo formado pela união de intervalos em uma linha real, onde a interseção ocorre apenas entre extremidades de intervalos.
-
-    Grafo Hiperbólico: Um grafo usado para modelar redes complexas, como redes sociais, que exibem características hiperbólicas em sua estrutura.
-
-    Grafo Esparsificador: Uma subestrutura de um grafo que retém características importantes enquanto reduz o número de arestas.
-
-    Matriz Laplaciana: Uma matriz associada a um grafo, que é útil em várias aplicações, incluindo análise de circuitos elétricos e teoria dos campos de Markov.
-
-    Grafo Geodésico: Um grafo onde cada aresta representa o caminho mais curto entre os vértices conectados.
-
-    Matriz de Adjacência: Uma matriz quadrada AA de ordem n×nn×n (onde nn é o número de vértices no grafo) usada para representar grafos não ponderados. O elemento aijaij​ é 1 se há uma aresta entre os vértices ii e jj, e 0 caso contrário. Em grafos direcionados, a matriz pode não ser simétrica.
-
-    Matriz de Incidência: Uma matriz BB de ordem n×mn×m (onde nn é o número de vértices e mm é o número de arestas) usada para representar grafos. Se a aresta jj incide no vértice ii, então bij=1bij​=1 se a aresta sai de ii, −1−1 se a aresta chega em ii, e 00 caso contrário.
-
-    Matriz de Laplaciana: Uma matriz LL de ordem n×nn×n associada a um grafo não direcionado, definida como L=D−AL=D−A, onde DD é a matriz diagonal dos graus dos vértices e AA é a matriz de adjacência. A matriz Laplaciana tem propriedades únicas relacionadas à conectividade e ciclos no grafo.
-
-    Caminhos em Matrizes de Adjacência: A potência de AA (AkAk) fornece informações sobre o número de caminhos de comprimento kk entre pares de vértices no grafo.
-
-    Matriz de Distâncias: Uma matriz que contém as distâncias mais curtas entre todos os pares de vértices em um grafo ponderado. Pode ser calculada usando algoritmos como o algoritmo de Floyd-Warshall.
-
-    Autovalores e Autovetores: Os autovalores e autovetores da matriz de adjacência ou da matriz Laplaciana estão relacionados a propriedades importantes do grafo, como conectividade e estrutura modular.
-
-    Matriz de Incidência Orientada: Uma variação da matriz de incidência usada para grafos direcionados, onde as colunas representam as arestas e as linhas representam os vértices, com entradas indicando a orientação da aresta.
-
-    Álgebra de Matrizes e Grafos: A álgebra de matrizes pode ser usada para realizar operações sobre grafos, como multiplicação de matrizes para computar a matriz de caminhos mais curtos ou encontrar o número de caminhos entre vértices.
-
-    Matriz Esparsa: Devido à natureza muitas vezes esparsa de grafos reais, representar matrizes de adjacência e de incidência como matrizes esparsas pode economizar espaço de armazenamento.
-
-    Teorema do Determinante da Árvore Geradora Mínima: O determinante de uma matriz obtida removendo qualquer linha e a coluna correspondente de uma matriz Laplaciana é igual ao número de árvores geradoras mínimas do grafo.
     
+
+
 
 
 
