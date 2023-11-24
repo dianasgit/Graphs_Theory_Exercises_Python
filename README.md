@@ -123,9 +123,9 @@ FINITE GRAPH: A graph with a finite number of nodes and edges.
 
 INCIDENCE FUNCTION: The nodes or nod that is connected to an edge. Write it as:   e1 |-> {v2, v4)  ; e2|-> {v5}loop
 
-DEGREE OF A NODE or VALENCE or NODE DEGREE: the total os edger that are incident to a node, or START in that node. Isolated nodes have degree 0. Loops count 2. 
+DEGREE OF A NODE or VALENCE or NODE DEGREE: the total of edges incident/connected to a node, or START in that node. Isolated nodes have degree 0. Loops count 2. 
 
-REGULAR GRAPH = a graph where every node has the same degree.
+REGULAR GRAPH = a graph where every node has the same degree. An exemple is the Petersen graph where every node has degree 3, and can be called "regular of degree 3". 
 
 *** HANDSHAKING LEMMA: Euler state that: In any FINITE AND UNDIRECTED AND SIMPLE graph the sum of all nodes degrees is twice the number of edges.
 THAN THE SUM OF ALL NODES DEGREES MUST BE EVEN. AND in every finite, undirectec and simple graph must exist at leat two nodes with the same degree.
@@ -134,6 +134,27 @@ Is also impossible draw a graph with 4 nodes with the respective degrees (1 , 2 
 
 ***ISOMORPHIC GRAPHS: Two graph are called isomorphic if it exists a bijective mapping in each node. They contain the same number of node, edges and degrees. BUT is necessary to make the mapping to guarantee the exact relation of connections, because a graph with the same number of nodes, and edges and degree could not be isomorphic.
 
+SUBGRAPH: A graph formed by a subset of vertices and edges from a larger graph.
+
+PLANAR GRAPH: A graph (that is or have an isomorphic representation) drawn on a plane without its edges crossing.
+
+FACES: the areas divided by edeges in a planar graph. The outside is also counted as 1 face.
+
+***EULER'S POLYHEDRAL FORMULA:  (vertices-edges+faces=2)            V - E + F = 2 
+In any connected and planar graph this formula is true.
+????Using this formula you can find out if a graph can be planar???
+
+
+*** ADJACENCY MATRIX: Can be used to compact representation of graphs. A matrix representing connections between vertices in a graph. The elements indicate whether there is an edge between vertices. Consider each node as a address in sequence is rows and columns, than the element Mij will be the number of edeges that connect each adress node. It can be 0 if no connection, 2 if it is a undirected loop, or any in other cases.
+THE ADJACENCY MATRIX OF AN ANDIRECTED GRAPH IS AWAYS SYMMETRIC (the information is duplicated between the triangular faces, because both parts of the edge are counted). 
+In a SIMPLE GRAPH (no loops, no parallels) the adjacency matrix has all zeros in the main diagonal and other Mij will be <=1.
+The sum of a row or column vectore shows the degree of the node in question. 
+The sum of all ellements of the matrix is twice the number of edges.
+
+
+
+
+Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
 
 
 Walk (or Path): A sequence of vertices in which each vertex is connected to the next by an edge in the graph.
@@ -152,11 +173,6 @@ Depth-First Search (DFS): An algorithm for traversing or searching graphs, where
 
 Minimum Spanning Tree: In a weighted graph, a minimum spanning tree is a tree that includes all vertices of the graph, with the total weight of edges minimized.
 
-Adjacency Matrix: A matrix representing connections between vertices in a graph. In the adjacency matrix, elements indicate whether there is an edge between vertices.
-
-Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
-
-Vertex Degree: The number of edges connected to a vertex.
 
 Bipartite Graph: A graph whose vertices can be divided into two sets, such that all edges connect a vertex from one set to the other.
 
@@ -170,8 +186,6 @@ Spanning Tree: A substructure of a graph that is a tree, connecting all vertices
 
 Eulerian Graph: A graph that contains an Eulerian cycle. Each vertex must have an even degree.
 
-Vertex Neighborhood: The set of vertices adjacent to a specific vertex.
-
 Shortest Path: The path with the smallest weight between two vertices in a weighted graph.
 
 Cyclic Graph: A graph that contains at least one cycle.
@@ -184,15 +198,10 @@ Four Color Theorem: States that any planar map can be colored with at most four 
 
 Kruskal's Minimum Spanning Tree Theorem: A method for finding a minimum spanning tree in a weighted graph.
 
-Planar Graph: A graph that can be drawn on a plane without its edges crossing.
 
 Degree Sequence: A list of the degrees of the vertices in a graph.
 
-Regular Graph: A graph in which all vertices have the same degree.
-
 Directed Acyclic Graph (DAG): A directed graph that does not contain cycles.
-
-Graph Isomorphism: Two graphs are isomorphic if there is a bijective correspondence between their sets of vertices and edges that preserves adjacencies.
 
 Eulerian Path: A walk that traverses each edge of a graph exactly once.
 
@@ -201,8 +210,6 @@ Game Theory in Graphs: Studies strategies and competitive interactions between d
 Interval Graph: A graph representing intervals on the real line, where vertices represent intervals and edges indicate overlaps.
 
 Preference Graph: Used to model preference relations between different objects or entities.
-
-Subgraph: A graph formed by a subset of vertices and edges from a larger graph.
 
 Ore's Theorem: A theorem that establishes a sufficient condition for the existence of a Hamiltonian cycle in an undirected graph.
 
