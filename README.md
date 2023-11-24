@@ -18,10 +18,6 @@ Every square diagonal and all square Identy are symmetric.
 
 SKEW-SIMETRIC =  A = -At
 
-DECOMPOSITION THEOREM: ANY Square matrix A can be represented by the sum of A = B+C where B is symetric and C is skew-symetric of A.
-B= 0,5*(A+At)
-C= 0,5*(A-At)
-
 ADITION OF MATRIX = just add elements of the same position.
 
 IN ADDITION THOSE LAWS APPLIE:
@@ -31,10 +27,75 @@ IN ADDITION THOSE LAWS APPLIE:
 
 
 SCALAR MULTIPLICATION = it just multiply each element of the matrix by a scalar (any real number different then zero). The following laws applied:
+*COMMUTATIVE: x*A = A*x
 *ASSOCIATIVE: (x*y)*A = x* (y*A)
 *DISTRIBUTIVE: (x+y)*A = x*A+ y*A
 or     x*(A+B) = x*A + x*B    
+The neutral scalar is the number 1. The scalar 0 will return a zero matrix.
     
+
+DECOMPOSITION THEOREM: ANY Square matrix A can be represented by the sum of A = B+C where B is symetric and C is skew-symetric of A.
+B= 0,5*(A+At)
+C= 0,5*(A-At)
+
+    
+DOT PRODUCT OF VECTORS: If a row vector is multiplied by a column vector, and you multiplie each correspond index and add one to another you will find out an real number = Scalar. Only applies to vectors with the same index. IN THIS CASE, COMMUTATIVE LAW APPLIES. at*b = bt*a. DIstributive law too.
+
+
+MULTIPLICATION OF MATRICES: The number of columns of the first must be the same as the number of lines of the second because the multiplication is YOU MULTIPLY EACH ELEMENT OF THE FIRST WITH THE SAME ELEMENT-COLUMN-INDEX OF THE SECOND AND SUM.
+*DIagonal matrices (all zero except the main diagonal) play an important role in multiplication because depending on the order of the multiplication the main diagonal will alter the row or the columns of the matrix result.
+*THE NEUTRAL ELEMENT IN MATRIX MULTIPLICATION IS THE IDENTITY MATRIX. A*E = E*A = A
+*LAWS OF MULTIPLICATION:
+- ASSOCIATIVE: (A*B)*C = A*(B*C)
+- DISTRIBUTIVE: A*(B+C) = A*B + A*C
+- IDENTITY:  A*E = A
+- ZERO MATRIX = O --> A*0 = 0
+- SCALAR MULTIPLICATION WITH AN IDENTITY MATRIX MULTIPLICATION:  x*A = (x*E)*A
+- POWER MATRIX CAN BE SIMPLIFIED:    A^s+t = A^s*A^t
+                                      A^s*t = (A^s)^t
+*****ATENTION: commutative law generally NOT apply to multiplication of matrices because   A*B != B*A
+
+
+
+
+***********LAWS OF TRANSPOSITION************
+* (At)t = A
+* (A+B)t = At + Bt
+* (x*A)t = x*At
+* (A*B)t = Bt * At
+* Et = E
+    
+    
+
+    ********************INVERSE/REGULAR MATRICES ***********************
+
+    Every real number x other than zero has a inverse value (x^-1), and when the inverse is multiplied by x the result must be = 1.
+  The inverse can be found as    1/x = x^-1
+  An inverse matrix MAY exist only for square matrices. Not every square matrix has as inverse.
+  The multiplication of a matrix by its inverse is equal to the identity:   A*A^-1 = A^-1*A = E
+  IF THE INVERSE MATRIX EXISTS THE MATRIX IS CALLED INVERTIBLE OU REGULAR. If not if called non-invertible or singular.
+
+    IF THE DETERMINANTE IS DIFFERENT THAN ZERO THE MATRIX IS INVERTIBLE, because it represent that the rows or columns of the matrix are linearly independent.
+      If the determiannte = 0 than the matrix is NOT invertible.
+
+    1  2  3       1  2  3  | 1  2         the determinante is=   x-y
+    4  5  6       4  5  6  | 4  5          1*5*9  + 2*6*7 + 3*4*8 = x
+    7  8  9       7  8  9  | 7  8          3*5*7  + 1*6*8  + 2*4*9 = y
+
+In 2x2 matrices to calculate the inverse (if the det != 0) just exchange the elementos on the main diagonal and reserse the sign (*-1) the elements of the second diagonal. And divide each element of the matrix by the determinant (divide because is the inverse of the determinant that matters 1/det and multiplay 1/det id the same as directly divide by the det.)
+*An square diagonal matrix can be inverse if all elements of the main diagonal are !=0 and to invert you just need the invert each element of the main diagonal separately, i.e, just put each one in the form of 1/x. A triangular uper or lower is also invertible if the main diagonal has NO zero element (if it has a zero the determinant will be also zero)
+***GENERAL LAWS:
+- Inversion and trasposition are interchangeable: (At)^-1 = (A^-1)t
+- IF A is simetric then A^-1 is also simmetric
+- Shock-shoe rule:  (A*B)^-1 = B^-1*A^-1
+
+**SIMETRICAL ENCRYPTION PROCEDURE = multiply a message by a matrix to encrypt and multiply the result by the inverse of the matrix key to decrypt. 
+***
+
+
+
+
+
     Grafo: Um grafo é uma coleção de vértices (ou nós) e arestas que conectam pares de vértices. Os grafos podem ser direcionados (arestas têm uma direção) ou não direcionados.
 
     Vértice: Um ponto em um grafo.
