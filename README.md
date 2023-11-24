@@ -152,6 +152,21 @@ The sum of a row or column vectore shows the degree of the node in question.
 The sum of all ellements of the matrix is twice the number of edges.
 
 
+*** DIRECTED GRAPH or DIGRAPH: ALL edges have a direction/orientation. Here the incidence function shows the direction separated by a comma in as ordered pair (origin, destination).    e|-> (i , j) even in case of loop where i=j.  If you chance the order of the ordered pair you change the graph!
+Two edges with the same start and destination node (same i,j) are PARALLEL. But if the start and destination is opposite [ (i,j) and (j,i) they are ANTIPARALLEL or OPPOSITE.
+-IN-DEGREE: the total of edges arriving in the node.
+-OUT-DEGREE: the total of edges leaving the node.
+*** The total of all IN and OUT and edges must be equal. The SUM of both IN and OUT degrees is the total degree of a Digraph.
+Each undirected graph CAN be converted in an DIGRAPH by the substitution of each edge by antiparallel edges and the loops replaced for junt a directed edge.
+*** SHADOW: is the opposite way, when you transform a Digraph in an Undirected graph replacing each directed edge by an undirected.
+
+
+
+
+
+# __________ SHORTES PATH PROBLEM - DIJKSTRA'S ALGORITHM ________ #
+
+
 
 
 Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
