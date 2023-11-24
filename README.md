@@ -146,7 +146,8 @@ In any connected and planar graph this formula is true.
 
 
 *** ADJACENCY MATRIX: Can be used to compact representation of graphs. A matrix representing connections between vertices in a graph. The elements indicate whether there is an edge between vertices. Consider each node as a address in sequence is rows and columns, than the element Mij will be the number of edeges that connect each adress node. It can be 0 if no connection, 2 if it is a undirected loop, or any in other cases.
-THE ADJACENCY MATRIX OF AN ANDIRECTED GRAPH IS AWAYS SYMMETRIC (the information is duplicated between the triangular faces, because both parts of the edge are counted). 
+THE ADJACENCY MATRIX OF AN UNDIRECTED GRAPH IS AWAYS SYMMETRIC (the information is duplicated between the triangular faces, because both parts of the edge are counted). 
+BUT, THE ADJACENCY MATRIX OF A DIGRAPH IS IN GENERAL IS NOT SIMETRIC, because it only represent the way the arrow goes. In digraph the sum of row vector=outputdegree and the sum of column vector=inputdegree.
 In a SIMPLE GRAPH (no loops, no parallels) the adjacency matrix has all zeros in the main diagonal and other Mij will be <=1.
 The sum of a row or column vectore shows the degree of the node in question. 
 The sum of all ellements of the matrix is twice the number of edges.
@@ -159,12 +160,27 @@ Two edges with the same start and destination node (same i,j) are PARALLEL. But 
 *** The total of all IN and OUT and edges must be equal. The SUM of both IN and OUT degrees is the total degree of a Digraph.
 Each undirected graph CAN be converted in an DIGRAPH by the substitution of each edge by antiparallel edges and the loops replaced for junt a directed edge.
 *** SHADOW: is the opposite way, when you transform a Digraph in an Undirected graph replacing each directed edge by an undirected.
-
+*In the isomorphism of digraphs the direction of the arrow must also be respected.
 
 
 
 
 # __________ SHORTES PATH PROBLEM - DIJKSTRA'S ALGORITHM ________ #
+
+*** WEIGHTED GRAPH = have a mapping relation (also called weight function ou cost function) that assign a weight (value) for each edge.
+The weight matrix has value zero in the main diagonal because cost nothing stay in the same node, the value to go from a node to another is described in the corresponding ij position and nodes there are not direct connected, a infinity sign is assigned.
+In undirected graphs the weight matrix is also simetric. In directed not necessarily.
+
+
+********** DIJKSTRA'S ALGORITHM : Used to find the shortest path between a starting node to all others in a weighted SIMPLE DIgraph (NO LOOPS OU PARALLELS). All weights must be positive. To applie the algorithm in an undirected graph you need to convert it in a digraph.
+This metod find the best path for each node separately, NOT the best way though many vertices.
+
+
+
+# __________________ KÖNIGSBERG BRIDGE PROBLEM ___________________ #
+
+
+
 
 
 
