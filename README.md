@@ -117,7 +117,7 @@ PARALLEL EDGE or MULTIPLE EDGER: Connect the same two nodes;
 
 LOOP: the edge that connect a node to itself
 
-** SIMPLE GRAPH: graph withOUT parallel edges (multiple edges) and withOUT Loops.
+** SIMPLE GRAPH: NO parallel edges (multiple edges) and NO Loops.
 
 FINITE GRAPH: A graph with a finite number of nodes and edges.
 
@@ -164,7 +164,6 @@ Each undirected graph CAN be converted in an DIGRAPH by the substitution of each
 
 
 
-
 # __________ SHORTES PATH PROBLEM - DIJKSTRA'S ALGORITHM ________ #
 
 *** WEIGHTED GRAPH = have a mapping relation (also called weight function ou cost function) that assign a weight (value) for each edge.
@@ -179,8 +178,29 @@ This metod find the best path for each node separately, NOT the best way though 
 
 # __________________ KÖNIGSBERG BRIDGE PROBLEM ___________________ #
 
+- WALK (or Path): A finite sequence of vertices in which each vertex is connected to the next by an edge in the graph. Can ve declared only writng the sequence of nodes. Is permited a edge ou a node be repeated ou a sema edge be crossed. A single edge with two nodes is considered a walk.
+The walk is CLOSED if it end at the same start note
+The walk is OPEN if it end in a  different node
 
+-DIRECTED GRAPH: a walk in a Digraph where all edges point to the same direction.
 
+- LENGTH OF THE WALK: the total of edges in the walk.
+
+- CONNECTED GRAPH: for every two random nodes there is a walk within then. A graph with only one node and a loop is considered connected.
+
+-STRONGLY CONNECTED: a digraph where for every random two nodes there is a direct path (one edge or more) to all nodes end the way back.
+
+**** KÖNIGSBERG BRIDGE PROBLEM *** Create a closed walk with 7 edges and 4 nodes starting with NO REPETITION. Impossible because all nodes have odd degree.
+
+*** EULERIAN GRAPH: a connected graph where ALL NODES MUST HAVE AN EVEN DEGREE. If a graph IS Eulerian all isomorphic derived graph will be eulerian too.
+A Digraph is eulerian if all nodes has the same in and out degree.
+
+*** EULERIAN TRAIL (or Eullerian path): NO REPETITION OF EDGES + ALL EDGES ARE VISITED. 
+MAY CONTAIN LOOPS AND PARALLELS, SO IT "OK" REPEAT NODES... EXISTS IF AND ONLY IF THERE IS NO OR EXACTLY TWO ODD NODES (two because they will be the start and end respectively) . all this without "removing the pencil from the paper".
+
+*** EULERIAN CIRCUIT: A CLOSED EURELIAN TRAIL. Can be represented by a graph called Eulerian graph.
+
+*** HIERHOZER'S ALGORITHM: Use to find the Eulerian Circuit. 
 
 
 
@@ -188,7 +208,6 @@ This metod find the best path for each node separately, NOT the best way though 
 Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
 
 
-Walk (or Path): A sequence of vertices in which each vertex is connected to the next by an edge in the graph.
 
 Cycle: A closed walk in a graph where the first and last vertices are the same, and edges are not repeated (except for the edge connecting the first and last vertices).
 
@@ -273,9 +292,9 @@ Maximum Flow Theorem: The value of the determinant of a matrix obtained by remov
 - 2 - Todo grafo G possui um número par de vértices de grau ímpar (ou nenhum), é impossível haver uma quantidade impar de vértices com grau ímpar, pois se não quebra o teorema 1.
 
 
-UM GRAFO SERÁ EULERIANO QUANDO EXISTE UMA TRILHA FECHADA (não repete arestas / começa e termina no mesmo vértice) QUE PASSA POR TODAS AS ARESTAS DE G.
+UM GRAFO SERÁ EULERIANO QUANDO EXISTE UMA TRILHA FECHADA (não repete arestas / começa e termina no mesmo vértice) QUE PASSA POR TODAS AS ARESTAS DE G E SE E SOMENTE SE TODOS OS NÓS TEM GRAU PAR.
 
-UM GRAFO SERÁ SEMI-EULERIANO É QUANDO EXISTE UMA TRILHA QUE PASSA POR TODAS AS ARESTAS SEM REPETIR TAMBÉM, MAS ELE COMEÇA E TERMINA EM VÉRTICES DIFERENTES.
+UM GRAFO SERÁ SEMI-EULERIANO É QUANDO EXISTE UMA TRILHA QUE PASSA POR TODAS AS ARESTAS SEM REPETIR TAMBÉM, MAS ELE COMEÇA E TERMINA EM VÉRTICES DIFERENTES. SERÁ SEMI EULERIANO SE O SEOMENTE SE TIVER DOIS VÉRTICES DE GRAU ÍMPAR.
 
 ****TEOREMA DE EULER (1736): Um grafo conexo G é Euleriano se, e somente se, todos seus vértices tem grau par.
 
