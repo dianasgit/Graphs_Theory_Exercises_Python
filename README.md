@@ -326,7 +326,7 @@ The three main sequence to traverse binary trees --> systematic walk with recurs
      D     E     F
     G
 
-**** PRÉ-ORDER: First you visit a node, after you visit its children first left then right.
+**** PRÉ-ORDER (node-left-right = NLR): First you visit a node, after you visit its children first left then right.
 PreOrder Algoritm (bin.tree.root p)
     While p!= null
     print (p)
@@ -335,9 +335,15 @@ PreOrder Algoritm (bin.tree.root p)
 //the example tree in this algorithm prints: A B D G E C F
 
 
-**** POST-ORDER:
+**** POST-ORDER (left-right-node = LRN): First you visit all nodes to the left possible, if not go to the right, in the end print, then repeat.
+    Algorithm PostOrder(bin.tree.root p)
+        While p!= null
+            PostOrder.GO(p.left)
+            PostOrder.GO(p.right)
+            Print (p)
+//This algorithm will print: G D E B F C A
 
-**** IN-ORDER (symmetric): You first visit the descendents  os left, after print the node, and after visit the right descendent, and repeat.
+**** IN-ORDER (left-node-right = LNR): You first visit the descendents  os left, after print the node, and after visit the right descendent, and repeat.
     Algorith SimOrder (bin.tree.root p)
       while p != null
           SimOrder.GO (p.left)
