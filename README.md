@@ -192,17 +192,114 @@ The walk is OPEN if it end in a  different node
 
 **** KÖNIGSBERG BRIDGE PROBLEM *** Create a closed walk with 7 edges and 4 nodes starting with NO REPETITION. Impossible because all nodes have odd degree.
 
-*** EULERIAN GRAPH: a connected graph where ALL NODES MUST HAVE AN EVEN DEGREE. If a graph IS Eulerian all isomorphic derived graph will be eulerian too.
-A Digraph is eulerian if all nodes has the same in and out degree.
+*** EULERIAN GRAPH = THE GRAPH THAT CONTAINS AN EULERIAN CIRCUIT: a connected graph where ALL NODES MUST HAVE AN EVEN DEGREE. If a graph IS Eulerian all isomorphic-derived graphs will be Eulerian too.
+A Digraph is eulerian if all nodes has the same in and out degree. 
+A Digraph is eulerian if it is strongly connected AND for each node it is true that the input degree is equal to the output degree.
 
-*** EULERIAN TRAIL (or Eullerian path): NO REPETITION OF EDGES + ALL EDGES ARE VISITED. 
-MAY CONTAIN LOOPS AND PARALLELS, SO IT "OK" REPEAT NODES... EXISTS IF AND ONLY IF THERE IS NO OR EXACTLY TWO ODD NODES (two because they will be the start and end respectively) . all this without "removing the pencil from the paper".
+
+*** EULERIAN TRAIL (or Eullerian Path): NO REPETITION OF EDGES + ALL EDGES ARE VISITED. 
+MAY CONTAIN LOOPS AND PARALLELS, SO IT "OK" REPEAT NODES... 
+EXISTS IF AND ONLY IF THERE IS NO OR EXACTLY TWO ODD NODES (two because they will be the start and end respectively). All this without "removing the pencil from the paper".
 
 *** EULERIAN CIRCUIT: A CLOSED EURELIAN TRAIL. Can be represented by a graph called Eulerian graph.
 
-*** HIERHOZER'S ALGORITHM: Use to find the Eulerian Circuit. 
+*** HIERHOZER'S ALGORITHM: Use to find the Eulerian Circuit in an undirected graph. Prerequisites: Connected graph that has only nodes with even degree. Also called Onion skin algorithm. The constructed closed walk resembles nested onion skins (it is a recursive algorithm)
+    1. Choose a node and construct from it a subcycle K that does not pass through any edge twice. 
+    2. If K is an Eulerian cycle, then break off. Otherwise, continue to step 3. 
+    3. Neglect all edges of K. 
+    4. At the first vertex of K, let a second subcycle K2 arise which contains no edge of K and no edge of the original graph twice. 
+    5. Insert the second circle K2 into K.
+    6. Continue with step 2.
+
+*** HOW TO SOLVE THE POSTMAN PROBLEM: First, we must determine whether the graph is Eulerian. If it is not, we must make it so, thereby allowing us to use Hierholzer’s algorithm.
+
+*** Which one of the following sets of procedures reveals the correct way to solve the postman problem?
+Determine whether the graph is Eulerian. Then, search for node pairs with odd degree and find the shortest connecting path. Double the edges of the shortest path and, finally, apply Hierholzer’s algorithm to find the Eulerian circuit.
 
 
+#____________________ HAMILTONIAN GRAPH AND THE PROBLEM OF THE TRAVELING SALESMAN   ___________________________#
+
+* PATH GRAPH (or LINEAR GRAPH): Linear Graph with pairwise edger =nodes-1.
+P1 one node, P2 two nodes ...Pn n nodes.
+
+* CYCLE GRAPH (not circle graph): nodes and edges are conected in a closed chain. 
+C1 one node, C2 two nodes ...Cn n nodes. All cycle graphs are regular of degree 2, planar and Eulerian.
+Because of this definition, it is necessary for a bipartite graph to have at least two nodes and no loops (but it can have multiple edges). All cycle graphs Cn with even number of nodes are bipartite.
+
+* STAR GRAPH: Has a central node that conect all other nodes (all other nodes are degree 1). The total of nodes = edges+1.
+S1 one node out the center, S2 two nodes out the center ...Sn n nodes out the center.
+
+* WHEEL GRAPH: has total nodes >= 4 and all nodes are adjacent to each others and has a "central node" in the draw.
+W4 four nodes, W5 five nodes ...Wn n nodes.
+
+* COMPLETE GRAPH: undirected simple graph (no loops or parallels) where there is an edge connecting every node. each node has degree = n-1 considering n as the total of nodes. SO all complete graph are also a Regular graph of degree n-1, so obviously in case of n is even the degree is odd and the graph will NOT be Eulerian. The total Number of edges: n * (n‒1)/2.
+K1 one node, K2 two nodes ...Kn n nodes.
+Is true that every subgraph with n nodes is a subgraph of Kn.
+
+
+*** BIPARTITE GRAPH (or BIGRAPH): the nodes are divided in two disjoited non-empty sets and THE EDGES ARE PLACED ONLY BETWEEN those sets, not inside them (each edge has one end in one set and the other in the oposite set). All cycle graph with an EVEN number of nodes are bipartite. Normally are called Km,n where m and n represent the nober of nodes in each set and those number are separed by comma. 
+The stargraph is also a Bipartite graph where Sn = K1,n
+
+
+* KURATOWSKI'S THEOREM *: Considering K5 and K3,3 as the smallet NON-PLANAR graph, te theorem says that a graph G is planar if and only if G does not contain a subgraph equal to K5 or K3,3.
+
+
+
+**** HAMILTONIAN GRAPH *** the graph that contain an Hamiltonian Cycle.
+Hamiltonian Cycle: CLOSED WALK THAT CONTAIN EACH NODE EXACTLY ONCE.
+No repetition of nodes and no repetition of edges consequently. DO NOT NEED TO VISIT EVERY EDGE.
+If is a digraph need to respect the orientation (also called directed Hamiltonian cycle).
+If a graph is isomorphic to an Hamiltonian that will be also hamiltonian.
+
+HAMILTONIAN PATH (SEMI-HAMILTONIAN GRAPH): Hamiltonian OPEN walk/path. 
+
+* Edge bridge: if you remore that edge from a graph the graph become Disconected.
+** IF THERE IS A BREDGE EDGE IN A GRAPH THIS GRAPH IS NOT HAMILTONIAN.
+ 
+///////////////////
+PATH GRAPHS:  are NOT EULERIAN and NOT HAMILTONIAN
+CYCLE GRAPHS: are EULERIAN and HAMILTONIAN
+STAR GRAPHS:  are NOT EULERIAN and NOT HAMILTONIAN
+WHEEL GRAPHS:  NOT EULERIAN but they are HAMILTONIAN
+COMPLETE GRAPHS (undirected simple graph each node has degree = n-1):  are EULERIAN for odd nodes, and are HAMILTONIAN for nodes >2
+SANTA'S HOUSE:  NOT EULERIAN but is HAMILTONIAN
+\\\\\\\\\\\\\\\\\\
+
+*** TO CALCULATE THE NUMBER OF POSSIBLE HAMILTONIAN CICLES IN A COMPLETE GRAPH 
+Kn  ==>      (n-1)! / 2
+In the case of simple graphs this formula also aplies but the result is ~at most~ the total hamiltonian cycles possibilities.
+
+*** At this moment there is no efficient algorithm to for decidin whether a graph is Hamiltonian and there is no efficiente algorith to find the Hamiltonian cycle in a graph (because this a a non-polinomial problem at this moment).
+
+*** The Ore and Dirac condition... are auxiliare condition to decide whether a graph is Hamiltonian.
+If both conditions are true then the graph IS hamiltonian, but if not it dos NOT mean that the graph is not Hamiltonian. Ex: the graph C5 is Hamiltonian BUT not satisfies the Ore condition.
+Ore condition:   every graph with total nodes >=3    the sum of the degree of all pairs of two non-adjacente nodes >= total nodes. 
+Dirac condition:   the smalles degree os a node in the graph >= total nodes/2
+If a graph satisfies the Dirac condition, then it also satisfies the Ore condition. However, if a graph satisfies the Ore condition, then it need not also satisfy the Dirac condition.
+
+
+
+***** Closely related to the Hamilton cycle problem is the traveling salesman problem (or TSP). It differs from the Hamilton circle problem only in that the underlying graphs are weighted. The task is to find a round trip through all nodes that minimizes the sum of the distances traveled. So the task is to find a Hamiltonian cycle in a weighted graph such that the sum of the weights is minimal. Example: Electronic circuit board manufacturing. 
+There is no exact algorithm that can solve the problem in acceptable time. Of course, it is possible to determine all Hamiltonian cycles, compare the sum of the weights of each, and choose the cycle with the smallest weight. However, as described earlier, a simple graph with n nodes can have up to (n‒1)!/2 Hamiltonian cycles. This is a lot of possibilities to compare.
+Therefore, a number of efficient approximation algorithms, called heuristics, has been developed in the last decades that can solve the traveling salesman problem with acceptable accuracy in acceptable time, even with many nodes. However, a heuristic cannot guarantee that the optimal solution can actually be found. ***
+
+
+
+
+
+
+** ______________________ TREES __________________________**
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
