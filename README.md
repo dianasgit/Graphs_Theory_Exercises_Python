@@ -217,7 +217,7 @@ EXISTS IF AND ONLY IF THERE IS NO OR EXACTLY TWO ODD NODES (two because they wil
 Determine whether the graph is Eulerian. Then, search for node pairs with odd degree and find the shortest connecting path. Double the edges of the shortest path and, finally, apply Hierholzer’s algorithm to find the Eulerian circuit.
 
 
-#____________________ HAMILTONIAN GRAPH AND THE PROBLEM OF THE TRAVELING SALESMAN   ___________________________#
+# HAMILTONIAN GRAPH AND THE PROBLEM OF THE TRAVELING SALESMAN #
 
 * PATH GRAPH (or LINEAR GRAPH): Linear Graph with pairwise edger =nodes-1.
 P1 one node, P2 two nodes ...Pn n nodes.
@@ -288,7 +288,63 @@ Therefore, a number of efficient approximation algorithms, called heuristics, ha
 
 
 
-** ______________________ TREES __________________________**
+##  TREES or TREE GRAPH  ##
+IS A CONNECTED GRAPH THAT DOES NOT CONTAIN ANY CLOSED WALK /DOES NOT CONTAIN ANY CYCLE. 
+Many disconnected tree graphs = forest.
+All sta graphs Sn are trees.
+All path graphs (one way line) Pn are also trees.
+A tree DOES NOT have loops or parallels. If one random edge is removed then the tree falls in two, is not it originally was not a tree.
+There is exactly one path between any two nodes, and the reverse is also true, so, if there is exactly one path between any two nodes of a graph without loops this graph is a tree.
+* A connected graph is a tree IF and only if all edges are bridges (if you remove it the graph becme disconnected).
+*IS TRUE THAT IF A NODE CONTAIN A NODE WITH K DEGREE, THIS TREE WILL ALSO CONTAIN AT LEAST K LEAVES.
+
+* LEAF (LEAVES): Node with degree 1, here it is about the degree, not the arrangement or interpretation. It is a node with no child. LEAVES HAS NO SUCESSOR.
+
+* INTERNAL NODE: A node with at least one child. If the root node has children then it is also a internal node.
+
+* TOTAL EDGES OF A TREE = total nodes-1.
+
+* ROOTED TREE: Is a tree where One node is designated as the root. A non-empty rooted tree contains exactly one root. Used to visualize hierarchical structures. The Root has NO predecessor. Considering the root is on top, you can CHILDREN the nodes below to an upper node, and call parent the node on top os the other node. Nodes with same parents are brothers or siblings. A rooted tree with only one node and no child this solitaty node is ate the same time root and leaf.
+
+* OUTEGREE OF A TREE: the maximum number of children of each node. Ex: a List tree has a maximum of 1 child per node.
+* FULL TREE: every node has the maximum number of children permitted by the outdegree, but not necessarily the final level of leaves will be complete
+* COMPLETE: Full tree inclusive in the leaf level.
+
+* HEIGHT OF A ROOT TREE: the maximum depth (counted from 0 = the root is index 0) of a node (the lenght of the path)
+
+* FREE TREE: tree without a specific root, any node could be the root.
+
+************* BINARY TREE ********************
+IS a rooted tree with outdegree =2. The children are called left and right child.
+
+THE TOTAL OF NODES IN A COMPLETE  BINARY TREE = (2ĥ+1)-1     where h is the height, remember the root is height 0. 
+
+The three main sequence to traverse binary trees --> systematic walk with recursive algorithm to "visit" all nodes:
+
+             A
+        B         C
+     D     E     F
+    G
+
+**** PRÉ-ORDER: First you visit a node, after you visit its children first left then right.
+PreOrder Algoritm (bin.tree.root p)
+    While p!= null
+    print (p)
+    PréOrder.GO(p.left)
+    PŕeOrder.GO(p.right)
+//the example tree in this algorithm prints: A B D G E C F
+
+
+**** POST-ORDER:
+
+**** IN-ORDER (symmetric): You first visit the descendents  os left, after print the node, and after visit the right descendent, and repeat.
+    Algorith SimOrder (bin.tree.root p)
+      while p != null
+          SimOrder.GO (p.left)
+            If p.left =null
+          print(p)
+          SimOrder.GO (p.right)
+//The result printed will be in ascending numerical order if it was a binary numerical tree organizes. In this case will print: G D B E A F C
 
 
 
@@ -297,9 +353,6 @@ Therefore, a number of efficient approximation algorithms, called heuristics, ha
 
 
 
-
-
- 
 
 
 Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
