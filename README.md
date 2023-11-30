@@ -122,87 +122,89 @@ IF the matrix is SIMETRIC = A * A = E
 
 **INCIDENCE FUNCTION**: The node(s) that is/are connected to an edge. Write it as:   e1 |-> {v2, v4)  ; e2|-> {v5}loop
 
-**DEGREE OF A NODE or VALENCE or NODE DEGREE**: the total of edges incident/connected to a node, or START in that node. Isolated nodes have degree 0. Loops count 2. 
+**DEGREE OF A NODE or VALENCE or NODE DEGREE**: the total of edges incident/connected to a node, or START in that node. Isolated nodes have a degree=0. Loops count 2. 
 
 **REGULAR GRAPH** = a graph where every node has the same degree. An example is the Petersen graph where every node has degree 3, and can be called "regular of degree 3". 
 
-**HANDSHAKING LEMMA**: Euler states that: In any FINITE AND UNDIRECTED AND SIMPLE graph the sum of all nodes degrees is twice the number of edges.
-THAN THE SUM OF ALL NODES DEGREES MUST BE EVEN. AND in every finite, undirectec and simple graph must exist at leat two nodes with the same degree.
+**HANDSHAKING LEMMA**: Euler states that: In any FINITE AND UNDIRECTED AND SIMPLE graph the sum of all node degrees is twice the number of edges.
+THEN THE SUM OF ALL NODES DEGREES MUST BE EVEN. And in every finite, undirected, and simple graph must exist at leat two nodes with the same degree.
 Exemple is impossible to draw a graph with 7 nodes whet all nodes has degree 3 .. because de sum will be 21, an odd number.
-Is also impossible draw a graph with 4 nodes with the respective degrees (1 , 2 , 3 , 4) the sum is even, BUT is impossible because must exist at least two nodes with the same degree.
+Is also impossible to draw a graph with 4 nodes with the respective degrees (1,2,3,4) the sum is even, BUT is impossible because there must exist at least two nodes with the same degree.
 
-**ISOMORPHIC GRAPHS**: Two graph are called isomorphic if it exists a bijective mapping in each node. They contain the same number of node, edges and degrees. BUT is necessary to make the mapping to guarantee the exact relation of connections, because a graph with the same number of nodes, and edges and degree could not be isomorphic.
+**ISOMORPHIC GRAPHS**: Two graphs are called isomorphic if there exists a bijective mapping in each node. They contain the same number of nodes, edges, and degrees. But is necessary to make the mapping to guarantee the exact relation of connections, because a graph with the same number of nodes, edges, and degree could not be isomorphic.
 
-SUBGRAPH: A graph formed by a subset of vertices and edges from a larger graph.
+**SUBGRAPH**: A graph formed by a subset of vertices and edges from a larger graph.
 
-PLANAR GRAPH: A graph (that is or have an isomorphic representation) drawn on a plane without its edges crossing.
+**PLANAR GRAPH**: A graph (that is or has an isomorphic representation) drawn on a plane without its edges crossing.
 
-FACES: the areas divided by edeges in a planar graph. The outside is also counted as 1 face.
+**FACES**: the areas divided by edges in a planar graph. The outside is also counted as 1 face.
 
-***EULER'S POLYHEDRAL FORMULA:  (vertices-edges+faces=2)            V - E + F = 2 
-In any connected and planar graph this formula is true.
+**EULER'S POLYHEDRAL FORMULA**:  (vertices-edges+faces=2)            V - E + F = 2 
+In any connected and planar graph, this formula is true.
 ????Using this formula you can find out if a graph can be planar???
 
 
-*** ADJACENCY MATRIX: Can be used to compact representation of graphs. A matrix representing connections between vertices in a graph. The elements indicate whether there is an edge between vertices. Consider each node as a address in sequence is rows and columns, than the element Mij will be the number of edeges that connect each adress node. It can be 0 if no connection, 2 if it is a undirected loop, or any in other cases.
-THE ADJACENCY MATRIX OF AN UNDIRECTED GRAPH IS AWAYS SYMMETRIC (the information is duplicated between the triangular faces, because both parts of the edge are counted). 
-BUT, THE ADJACENCY MATRIX OF A DIGRAPH IS IN GENERAL IS NOT SIMETRIC, because it only represent the way the arrow goes. In digraph the sum of row vector=outputdegree and the sum of column vector=inputdegree.
-In a SIMPLE GRAPH (no loops, no parallels) the adjacency matrix has all zeros in the main diagonal and other Mij will be <=1.
-The sum of a row or column vectore shows the degree of the node in question. 
-The sum of all ellements of the matrix is twice the number of edges.
+**ADJACENCY MATRIX**: Can be used to compact representation of graphs. A matrix representing connections between vertices in a graph. The elements indicate whether there is an edge between vertices. Consider each node as an address in a sequence is rows and columns, and then the element Mij will be the number of edges that connect each address node. It can be 0 if no connection, 2 if it is an undirected loop or any in other cases.
+THE ADJACENCY MATRIX OF AN UNDIRECTED GRAPH IS AWAYS SYMMETRIC (the information is duplicated between the triangular faces because both parts of the edge are counted). 
+BUT, **THE ADJACENCY MATRIX OF A DIGRAPH IN GENERAL IS NOT SIMETRIC**, because it only represents the way the arrow goes. In digraph the sum of row vector=outputdegree and the sum of column vector=inputdegree.
+In a SIMPLE GRAPH (no loops, no parallels) the adjacency matrix has all zeros in the main diagonal, and other Mij will be <=1.
+The sum of a row or column vector shows the degree of the node in question. 
+The sum of all elements of the matrix is twice the number of edges.
 
 
-*** DIRECTED GRAPH or DIGRAPH: ALL edges have a direction/orientation. Here the incidence function shows the direction separated by a comma in as ordered pair (origin, destination).    e|-> (i , j) even in case of loop where i=j.  If you chance the order of the ordered pair you change the graph!
-Two edges with the same start and destination node (same i,j) are PARALLEL. But if the start and destination is opposite [ (i,j) and (j,i) they are ANTIPARALLEL or OPPOSITE.
+**DIRECTED GRAPH or DIGRAPH**: ALL edges have a direction/orientation. Here the incidence function shows the direction separated by a comma in an ordered pair (origin, destination).    e|-> (i, j) even in the case of a loop where i=j.  If you change the order of the ordered pair you change the graph!
+Two edges with the same start and destination node (same i,j) are PARALLEL. But if the start and destination are opposite [ (i,j) and (j, i) they are ANTIPARALLEL or OPPOSITE.
 -IN-DEGREE: the total of edges arriving in the node.
 -OUT-DEGREE: the total of edges leaving the node.
-*** The total of all IN and OUT and edges must be equal. The SUM of both IN and OUT degrees is the total degree of a Digraph.
-Each undirected graph CAN be converted in an DIGRAPH by the substitution of each edge by antiparallel edges and the loops replaced for junt a directed edge.
-*** SHADOW: is the opposite way, when you transform a Digraph in an Undirected graph replacing each directed edge by an undirected.
+*The total of all IN and OUT and edges must be equal. The SUM of both IN and OUT degrees is the total degree of a Digraph.
+Each undirected graph CAN be converted into a DIGRAPH by the substitution of each edge by antiparallel edges and the loops replaced for just a directed edge.
+
+**SHADOW**: is the opposite way, when you transform a Digraph in an Undirected graph replacing each directed edge with an undirected one.
 *In the isomorphism of digraphs the direction of the arrow must also be respected.
 
 
 
-# __________ SHORTES PATH PROBLEM - DIJKSTRA'S ALGORITHM ________ #
+##_SHORTES PATH PROBLEM - DIJKSTRA'S ALGORITHM_##
 
-*** WEIGHTED GRAPH = have a mapping relation (also called weight function ou cost function) that assign a weight (value) for each edge.
-The weight matrix has value zero in the main diagonal because cost nothing stay in the same node, the value to go from a node to another is described in the corresponding ij position and nodes there are not direct connected, a infinity sign is assigned.
-In undirected graphs the weight matrix is also simetric. In directed not necessarily.
-
-
-********** DIJKSTRA'S ALGORITHM : Used to find the shortest path between a starting node to all others in a weighted SIMPLE DIgraph (NO LOOPS OU PARALLELS). All weights must be positive. To applie the algorithm in an undirected graph you need to convert it in a digraph.
-This metod find the best path for each node separately, NOT the best way though many vertices.
+**WEIGHTED GRAPH** = have a mapping relation (also called weight function or cost function) that assigns a weight (value) for each edge.
+The weight matrix has a value zero in the main diagonal because cost nothing stays in the same node, the value to go from one node to another is described in the corresponding ij position, and nodes there are not directly connected, an infinity sign is assigned.
+In undirected graphs, the weight matrix is also symmetric. In directed not necessarily.
 
 
-
-# __________________ KÖNIGSBERG BRIDGE PROBLEM ___________________ #
-
-- WALK (or Path): A finite sequence of vertices in which each vertex is connected to the next by an edge in the graph. Can ve declared only writng the sequence of nodes. Is permited a edge ou a node be repeated ou a sema edge be crossed. A single edge with two nodes is considered a walk.
-The walk is CLOSED if it end at the same start note
-The walk is OPEN if it end in a  different node
-
--DIRECTED GRAPH: a walk in a Digraph where all edges point to the same direction.
-
-- LENGTH OF THE WALK: the total of edges in the walk.
-
-- CONNECTED GRAPH: for every two random nodes there is a walk within then. A graph with only one node and a loop is considered connected.
-
--STRONGLY CONNECTED: a digraph where for every random two nodes there is a direct path (one edge or more) to all nodes end the way back.
-
-**** KÖNIGSBERG BRIDGE PROBLEM *** Create a closed walk with 7 edges and 4 nodes starting with NO REPETITION. Impossible because all nodes have odd degree.
-
-*** EULERIAN GRAPH = THE GRAPH THAT CONTAINS AN EULERIAN CIRCUIT: a connected graph where ALL NODES MUST HAVE AN EVEN DEGREE. If a graph IS Eulerian all isomorphic-derived graphs will be Eulerian too.
-A Digraph is eulerian if all nodes has the same in and out degree. 
-A Digraph is eulerian if it is strongly connected AND for each node it is true that the input degree is equal to the output degree.
+**DIJKSTRA'S ALGORITHM**: Used to find the shortest path between a starting node to all others in a weighted SIMPLE DIgraph (NO LOOPS OU PARALLELS). All weights must be positive. To apply the algorithm in an undirected graph you need to convert it in a digraph.
+This metod finds the best path for each node separately, NOT the best way through many vertices.
 
 
-*** EULERIAN TRAIL (or Eullerian Path): NO REPETITION OF EDGES + ALL EDGES ARE VISITED. 
-MAY CONTAIN LOOPS AND PARALLELS, SO IT "OK" REPEAT NODES... 
-EXISTS IF AND ONLY IF THERE IS NO OR EXACTLY TWO ODD NODES (two because they will be the start and end respectively). All this without "removing the pencil from the paper".
 
-*** EULERIAN CIRCUIT: A CLOSED EURELIAN TRAIL. Can be represented by a graph called Eulerian graph.
+##__KÖNIGSBERG BRIDGE PROBLEM__##
 
-*** HIERHOZER'S ALGORITHM: Use to find the Eulerian Circuit in an undirected graph. Prerequisites: Connected graph that has only nodes with even degree. Also called Onion skin algorithm. The constructed closed walk resembles nested onion skins (it is a recursive algorithm)
+**WALK (or Path)**: A finite sequence of vertices in which each vertex is connected to the next by an edge in the graph. Can be declared only by writing the sequence of nodes. Is permitted an edge or a node to be repeated or the same edge to be crossed. A single edge with two nodes is considered a walk.
+The walk is CLOSED if it ends at the same start note
+The walk is OPEN if it ends in a  different node
+
+**DIRECTED GRAPH**: a walk in a Digraph where all edges point in the same direction.
+
+**LENGTH OF THE WALK**: the total of edges in the walk.
+
+**CONNECTED GRAPH**: for every two random nodes there is a walk within them. A graph with only one node and a loop is considered connected.
+
+**STRONGLY CONNECTED**: a digraph where for every random two nodes there is a direct path (one edge or more) to all nodes end the way back.
+
+
+**----KÖNIGSBERG BRIDGE PROBLEM** Create a closed walk with 7 edges and 4 nodes starting with NO REPETITION. Impossible because all nodes have odd degrees.
+
+**EULERIAN GRAPH** = THE GRAPH THAT CONTAINS AN EULERIAN CIRCUIT: a connected graph where ALL NODES MUST HAVE AN EVEN DEGREE. If a graph IS Eulerian all isomorphic-derived graphs will be Eulerian too.
+A Digraph is eulerian if all nodes have the same in and out-degree. 
+A Digraph is eulerian if it is strongly connected AND for each node, it is true that the input degree is equal to the output degree.
+
+
+**EULERIAN TRAIL (or Eulerian Path)**: NO REPETITION OF EDGES + ALL EDGES ARE VISITED. 
+MAY CONTAIN LOOPS AND PARALLELS, SO IT IS "OK" TO REPEAT NODES... 
+EXISTS IF AND ONLY IF THERE ARE NO OR EXACTLY TWO ODD NODES (two because they will be the start and end respectively). All this without "removing the pencil from the paper".
+
+**EULERIAN CIRCUIT**: A CLOSED EURELIAN TRAIL. Can be represented by a graph called Eulerian graph.
+
+**HIERHOZER'S ALGORITHM**: Use to find the Eulerian Circuit in an undirected graph. Prerequisites: A connected graph that has only nodes with even degrees. Also called the Onion skin algorithm. The constructed closed walk resembles nested onion skins (it is a recursive algorithm)
     1. Choose a node and construct from it a subcycle K that does not pass through any edge twice. 
     2. If K is an Eulerian cycle, then break off. Otherwise, continue to step 3. 
     3. Neglect all edges of K. 
@@ -210,123 +212,120 @@ EXISTS IF AND ONLY IF THERE IS NO OR EXACTLY TWO ODD NODES (two because they wil
     5. Insert the second circle K2 into K.
     6. Continue with step 2.
 
-*** HOW TO SOLVE THE POSTMAN PROBLEM: First, we must determine whether the graph is Eulerian. If it is not, we must make it so, thereby allowing us to use Hierholzer’s algorithm.
+**HOW TO SOLVE THE POSTMAN PROBLEM**: First, we must determine whether the graph is Eulerian. If it is not, we must make it so, thereby allowing us to use Hierholzer’s algorithm.
 
-*** Which one of the following sets of procedures reveals the correct way to solve the postman problem?
-Determine whether the graph is Eulerian. Then, search for node pairs with odd degree and find the shortest connecting path. Double the edges of the shortest path and, finally, apply Hierholzer’s algorithm to find the Eulerian circuit.
+**Which one of the following sets of procedures reveals the correct way to solve the postman problem?**
+Determine whether the graph is Eulerian. Then, search for node pairs with odd degrees and find the shortest connecting path. Double the edges of the shortest path and, finally, apply Hierholzer’s algorithm to find the Eulerian circuit.
 
 
-# HAMILTONIAN GRAPH AND THE PROBLEM OF THE TRAVELING SALESMAN #
+##__HAMILTONIAN GRAPH AND THE PROBLEM OF THE TRAVELING SALESMAN__##
 
-* PATH GRAPH (or LINEAR GRAPH): Linear Graph with pairwise edger =nodes-1.
+**PATH GRAPH (or LINEAR GRAPH)**: Linear Graph with pairwise edger =nodes-1.
 P1 one node, P2 two nodes ...Pn n nodes.
 
-* CYCLE GRAPH (not circle graph): nodes and edges are conected in a closed chain. 
-C1 one node, C2 two nodes ...Cn n nodes. All cycle graphs are regular of degree 2, planar and Eulerian.
-Because of this definition, it is necessary for a bipartite graph to have at least two nodes and no loops (but it can have multiple edges). All cycle graphs Cn with even number of nodes are bipartite.
+**CYCLE GRAPH (not circle graph)**: nodes and edges are connected in a closed chain. 
+C1 one node, C2 two nodes ...Cn n nodes. All cycle graphs are regular of degree 2, planar, and Eulerian.
+Because of this definition, it is necessary for a bipartite graph to have at least two nodes and no loops (but it can have multiple edges). All cycle graphs Cn with an even number of nodes are bipartite.
 
-* STAR GRAPH: Has a central node that conect all other nodes (all other nodes are degree 1). The total of nodes = edges+1.
+**STAR GRAPH**: Has a central node that is connected to all other nodes (all other nodes are degree 1). The total of nodes = edges+1.
 S1 one node out the center, S2 two nodes out the center ...Sn n nodes out the center.
 
-* WHEEL GRAPH: has total nodes >= 4 and all nodes are adjacent to each others and has a "central node" in the draw.
+**WHEEL GRAPH**: has total nodes >= 4 and all nodes are adjacent to each other and have a "central node" in the draw.
 W4 four nodes, W5 five nodes ...Wn n nodes.
 
-* COMPLETE GRAPH: undirected simple graph (no loops or parallels) where there is an edge connecting every node. each node has degree = n-1 considering n as the total of nodes. SO all complete graph are also a Regular graph of degree n-1, so obviously in case of n is even the degree is odd and the graph will NOT be Eulerian. The total Number of edges: n * (n‒1)/2.
+**COMPLETE GRAPH**: undirected simple graph (no loops or parallels) where there is an edge connecting every node. each node has degree = n-1 considering n as the total of nodes. So all complete graphs are also a Regular graph of degree n-1, so obviously in case of n is even the degree is odd and the graph will NOT be Eulerian. The total Number of edges: n * (n‒1)/2.
 K1 one node, K2 two nodes ...Kn n nodes.
 Is true that every subgraph with n nodes is a subgraph of Kn.
 
 
-*** BIPARTITE GRAPH (or BIGRAPH): the nodes are divided in two disjoited non-empty sets and THE EDGES ARE PLACED ONLY BETWEEN those sets, not inside them (each edge has one end in one set and the other in the oposite set). All cycle graph with an EVEN number of nodes are bipartite. Normally are called Km,n where m and n represent the nober of nodes in each set and those number are separed by comma. 
+**BIPARTITE GRAPH (or BIGRAPH)**: the nodes are divided into two disjointed non-empty sets and THE EDGES ARE PLACED ONLY BETWEEN those sets, not inside them (each edge has one end in one set and the other in the opposite set). All cycle graphs with an EVEN number of nodes are bipartite. Normally are called Km,n where m and n represent the number of nodes in each set and those numbers are separated by a comma. 
 The stargraph is also a Bipartite graph where Sn = K1,n
 
 
-* KURATOWSKI'S THEOREM *: Considering K5 and K3,3 as the smallet NON-PLANAR graph, te theorem says that a graph G is planar if and only if G does not contain a subgraph equal to K5 or K3,3.
+**KURATOWSKI'S THEOREM**: Considering K5 and K3,3 as the smallest NON-PLANAR graph, the theorem says that a graph G is planar if and only if G does not contain a subgraph equal to K5 or K3,3.
 
 
 
-**** HAMILTONIAN GRAPH *** the graph that contain an Hamiltonian Cycle.
-Hamiltonian Cycle: CLOSED WALK THAT CONTAIN EACH NODE EXACTLY ONCE.
+**-----HAMILTONIAN GRAPH** the graph that contains a Hamiltonian Cycle.
+**Hamiltonian Cycle**: CLOSED WALK THAT CONTAIN EACH NODE EXACTLY ONCE.
 No repetition of nodes and no repetition of edges consequently. DO NOT NEED TO VISIT EVERY EDGE.
-If is a digraph need to respect the orientation (also called directed Hamiltonian cycle).
-If a graph is isomorphic to an Hamiltonian that will be also hamiltonian.
+If is a digraph needs to respect the orientation (also called directed Hamiltonian cycle).
+If a graph is isomorphic to a Hamiltonian that will be also Hamiltonian.
 
-HAMILTONIAN PATH (SEMI-HAMILTONIAN GRAPH): Hamiltonian OPEN walk/path. 
+**HAMILTONIAN PATH (SEMI-HAMILTONIAN GRAPH)**: Hamiltonian OPEN walk/path. 
 
-* Edge bridge: if you remore that edge from a graph the graph become Disconected.
-** IF THERE IS A BREDGE EDGE IN A GRAPH THIS GRAPH IS NOT HAMILTONIAN.
+**Edge bridge**: if you remove that edge from a graph the graph becomes Disconnected.
+**IF THERE IS A BRIDGE EDGE IN A GRAPH THIS GRAPH IS NOT HAMILTONIAN**.
  
 ///////////////////
-PATH GRAPHS:  are NOT EULERIAN and NOT HAMILTONIAN
-CYCLE GRAPHS: are EULERIAN and HAMILTONIAN
-STAR GRAPHS:  are NOT EULERIAN and NOT HAMILTONIAN
-WHEEL GRAPHS:  NOT EULERIAN but they are HAMILTONIAN
-COMPLETE GRAPHS (undirected simple graph each node has degree = n-1):  are EULERIAN for odd nodes, and are HAMILTONIAN for nodes >2
-SANTA'S HOUSE:  NOT EULERIAN but is HAMILTONIAN
+**PATH GRAPHS**:  are NOT EULERIAN and NOT HAMILTONIAN
+**CYCLE GRAPHS**: are EULERIAN and HAMILTONIAN
+**STAR GRAPHS**:  are NOT EULERIAN and NOT HAMILTONIAN
+**WHEEL GRAPHS**:  NOT EULERIAN but they are HAMILTONIAN
+**COMPLETE GRAPHS**: (undirected simple graph each node has degree = n-1):  are EULERIAN for odd nodes, and are HAMILTONIAN for nodes >2
+**SANTA'S HOUSE**:  NOT EULERIAN but is HAMILTONIAN
 \\\\\\\\\\\\\\\\\\
 
-*** TO CALCULATE THE NUMBER OF POSSIBLE HAMILTONIAN CICLES IN A COMPLETE GRAPH 
-Kn  ==>      (n-1)! / 2
-In the case of simple graphs this formula also aplies but the result is ~at most~ the total hamiltonian cycles possibilities.
+**TO CALCULATE THE NUMBER OF POSSIBLE HAMILTONIAN CICLES IN A COMPLETE GRAPH**     Kn  ==>      (n-1)! / 2
+In the case of simple graphs, this formula also applies but the result is ~at most~ the total Hamiltonian cycle possibilities.
 
-*** At this moment there is no efficient algorithm to for decidin whether a graph is Hamiltonian and there is no efficiente algorith to find the Hamiltonian cycle in a graph (because this a a non-polinomial problem at this moment).
+**At this moment there is no efficient algorithm for deciding whether a graph is Hamiltonian and there is no efficient algorithm to find the Hamiltonian cycle in a graph (because this a a non-polinomial problem at this moment).**
 
-*** The Ore and Dirac condition... are auxiliare condition to decide whether a graph is Hamiltonian.
-If both conditions are true then the graph IS hamiltonian, but if not it dos NOT mean that the graph is not Hamiltonian. Ex: the graph C5 is Hamiltonian BUT not satisfies the Ore condition.
-Ore condition:   every graph with total nodes >=3    the sum of the degree of all pairs of two non-adjacente nodes >= total nodes. 
-Dirac condition:   the smalles degree os a node in the graph >= total nodes/2
+**The Ore and Dirac condition**... are auxiliary conditions to decide whether a graph is Hamiltonian.
+If both conditions are true then the graph IS Hamiltonian, but if not it does NOT mean that the graph is not Hamiltonian. Ex: the graph C5 is Hamiltonian BUT not satisfy the Ore condition.
+**---Ore condition**: every graph with total nodes   >=3     the sum of the degree of all pairs of two non-adjacent nodes >= total nodes. 
+**---Dirac condition**: the smallest degree of a node in the graph >= total nodes/2
 If a graph satisfies the Dirac condition, then it also satisfies the Ore condition. However, if a graph satisfies the Ore condition, then it need not also satisfy the Dirac condition.
 
 
-
-***** Closely related to the Hamilton cycle problem is the traveling salesman problem (or TSP). It differs from the Hamilton circle problem only in that the underlying graphs are weighted. The task is to find a round trip through all nodes that minimizes the sum of the distances traveled. So the task is to find a Hamiltonian cycle in a weighted graph such that the sum of the weights is minimal. Example: Electronic circuit board manufacturing. 
-There is no exact algorithm that can solve the problem in acceptable time. Of course, it is possible to determine all Hamiltonian cycles, compare the sum of the weights of each, and choose the cycle with the smallest weight. However, as described earlier, a simple graph with n nodes can have up to (n‒1)!/2 Hamiltonian cycles. This is a lot of possibilities to compare.
-Therefore, a number of efficient approximation algorithms, called heuristics, has been developed in the last decades that can solve the traveling salesman problem with acceptable accuracy in acceptable time, even with many nodes. However, a heuristic cannot guarantee that the optimal solution can actually be found. ***
-
+**Traveling salesman problem (or TSP)**. It differs from the Hamilton circle problem only in that the underlying graphs are weighted. The task is to find a round trip through all nodes that minimizes the sum of the distances traveled. So the task is to find a Hamiltonian cycle in a weighted graph such that the sum of the weights is minimal. Example: Electronic circuit board manufacturing. 
+There is no exact algorithm that can solve the problem in an acceptable time. Of course, it is possible to determine all Hamiltonian cycles, compare the sum of the weights of each, and choose the cycle with the smallest weight. However, as described earlier, a simple graph with n nodes can have up to (n‒1)!/2 Hamiltonian cycles. There are a lot of possibilities to compare.
+Therefore, some efficient approximation algorithms, called heuristics, have been developed in the last decades that can solve the traveling salesman problem with acceptable accuracy in an acceptable time, even with many nodes. However, a heuristic cannot guarantee that the optimal solution can actually be found. ***
 
 
 
+##__TREES or TREE GRAPH__##
 
-
-##  TREES or TREE GRAPH  ##
 IS A CONNECTED GRAPH THAT DOES NOT CONTAIN ANY CLOSED WALK /DOES NOT CONTAIN ANY CYCLE. 
 Many disconnected tree graphs = forest.
-All sta graphs Sn are trees.
-All path graphs (one way line) Pn are also trees.
+All star-graphs Sn are trees.
+All path graphs (one-way line) Pn are also trees.
 A tree DOES NOT have loops or parallels. If one random edge is removed then the tree falls in two, is not it originally was not a tree.
 There is exactly one path between any two nodes, and the reverse is also true, so, if there is exactly one path between any two nodes of a graph without loops this graph is a tree.
-* A connected graph is a tree IF and only if all edges are bridges (if you remove it the graph becme disconnected).
-*IS TRUE THAT IF A NODE CONTAIN A NODE WITH K DEGREE, THIS TREE WILL ALSO CONTAIN AT LEAST K LEAVES.
+* A connected graph is a tree IF and only if all edges are bridges (if you remove it the graph becomes disconnected).
+*IS TRUE THAT IF A NODE CONTAINS A NODE WITH K DEGREE, THIS TREE WILL ALSO CONTAIN AT LEAST K LEAVES.
 
-* LEAF (LEAVES): Node with degree 1, here it is about the degree, not the arrangement or interpretation. It is a node with no child. LEAVES HAS NO SUCESSOR.
+**LEAF (LEAVES)**: Node with degree 1, here it is about the degree, not the arrangement or interpretation. It is a node with no child. LEAVES HAS NO SUCESSOR.
 
-* INTERNAL NODE: A node with at least one child. If the root node has children then it is also a internal node.
+**INTERNAL NODE**: A node with at least one child. If the root node has children then it is also an internal node.
 
-* TOTAL EDGES OF A TREE = total nodes-1.
+**TOTAL EDGES OF A TREE** = total nodes-1.
 
-* ROOTED TREE: Is a tree where One node is designated as the root. A non-empty rooted tree contains exactly one root. Used to visualize hierarchical structures. The Root has NO predecessor. Considering the root is on top, you can CHILDREN the nodes below to an upper node, and call parent the node on top os the other node. Nodes with same parents are brothers or siblings. A rooted tree with only one node and no child this solitaty node is ate the same time root and leaf.
+**ROOTED TREE**: This is a tree where One node is designated as the root. A non-empty rooted tree contains exactly one root. Used to visualize hierarchical structures. The Root has NO predecessor. Considering the root is on top, you can CHILDREN the nodes below to an upper node and call the parent the node on top of the other node. Nodes with the same parents are brothers or siblings. A rooted tree with only one node and no child this solitary node is at the same time root and leaf.
 
-* OUTEGREE OF A TREE: the maximum number of children of each node. Ex: a List tree has a maximum of 1 child per node.
-* FULL TREE: every node has the maximum number of children permitted by the outdegree, but not necessarily the final level of leaves will be complete
-* COMPLETE: Full tree inclusive in the leaf level.
+**OUTDEGREE OF A TREE**: the maximum number of children of each node. Ex: a List tree has a maximum of 1 child per node.
+**FULL TREE**: every node has the maximum number of children permitted by the outdegree, but not necessarily the final level of leaves will be complete
+**COMPLETE TREE**: Full tree inclusive in the leaf level.
 
-* HEIGHT OF A ROOT TREE: the maximum depth (counted from 0 = the root is index 0) of a node (the lenght of the path)
+**HEIGHT OF A ROOT TREE**: the maximum depth (counted from 0 = the root is index 0) of a node (the length of the path)
 
-* FREE TREE: tree without a specific root, any node could be the root.
+**FREE TREE**: A tree without a specific root, any node could be the root.
 
-************* BINARY TREE ********************
-IS a rooted tree with outdegree =2. The children are called left and right child.
 
-THE TOTAL OF NODES IN A COMPLETE  BINARY TREE = (2ĥ+1)-1     where h is the height, remember the root is height 0. 
+###__BINARY TREE___###
+IS a rooted tree with outdegree =2. The children are called the left and right child.
 
-The three main sequence to traverse binary trees --> systematic walk with recursive algorithm to "visit" all nodes:
+**THE TOTAL OF NODES IN A COMPLETE  BINARY TREE = (2ĥ+1)-1**     where h is the height, remember the root is height 0. 
+
+The three main sequences to traverse binary trees --> systematic walk with a recursive algorithm to "visit" all nodes:
 
              A
         B        C
       D   E    F
     G
 
-**** PRÉ-ORDER (node-left-right = NLR): First you visit a node, after you visit its children first left then right.
-PreOrder Algoritm (bin.tree.root p)
+*****PRÉ-ORDER (node-left-right = NLR)**: First you visit a node, after you visit its children first left then right.
+PreOrder Algorithm (bin.tree.root p)
     While p!= null
     print (p)
     PréOrder.GO(p.left)
@@ -334,7 +333,7 @@ PreOrder Algoritm (bin.tree.root p)
 //the example tree in this algorithm prints: A B D G E C F
 
 
-**** POST-ORDER (left-right-node = LRN): First you visit all nodes to the left possible, if not go to the right, in the end print, then repeat.
+*****POST-ORDER (left-right-node = LRN)**: First you visit all nodes to the left if possible, if not go to the right, in the end print, then repeat.
     Algorithm PostOrder(bin.tree.root p)
         While p!= null
             PostOrder.GO(p.left)
@@ -342,236 +341,34 @@ PreOrder Algoritm (bin.tree.root p)
             Print (p)
 //This algorithm will print: G D E B F C A
 
-**** IN-ORDER (left-node-right = LNR): You first visit the descendents  os left, after print the node, and after visit the right descendent, and repeat.
-    Algorith SimOrder (bin.tree.root p)
+*****IN-ORDER (left-node-right = LNR)**: You first visit the descendent's  os left, after printing the node, and after visiting the right descendent, and repeat.
+    Algorithm SimOrder (bin.tree.root p)
       while p != null
           SimOrder.GO (p.left)
             If p.left =null
           print(p)
           SimOrder.GO (p.right)
-//The result printed will be in ascending numerical order if it was a binary numerical tree organizes. In this case will print: G D B E A F C
+//The result printed will be in ascending numerical order if it was a binary numerical tree organized. In this case will print: G D B E A F C
 
 
-*** BINARY SEARCH TREE: Is a binary tree where each data (node) has a key to identifies and allows the data to be found quickly.
+###__BINARY SEARCH TREE__###: 
+Is a binary tree where each data (node) has a key to identify and allows the data to be found quickly.
 ---- LEFT descendent: smaller
 ---- RIGHT descendent: larger.
-If print IN-ORDER the key are output in ascendin order.
-If print POST-ORDER the key are output the values os both subtrees before the root.
-If print PRÉ-ORDER the root key are output first, before the subtrees. 
-IN BINARY SERACH TREE THE OPERATIONS OF SEARCH, INSERT, REMOVE, ETC CAN BE PERFORMED RECURSIVELLY.
+If print IN-ORDER the key is output in ascendin order.
+If print POST-ORDER the key are outputs the values of both subtrees before the root.
+If print PRÉ-ORDER the root key is output first, before the subtrees. 
+IN A BINARY SEARCH TREE THE OPERATIONS OF SEARCH, INSERT, REMOVE, ETC CAN BE PERFORMED RECURSIVELY.
 
 
-*** SPANNING TREE *** IS A TREE CONTAINING ALL NODES OF A GRAPH. Is created selecting a closed walk from a graph how is not a tree and than removing an edge from this walk. This principle is used in electricity systems for instance, because if a line(edge)fails the system still works.
---- EVERY CONNECTED GRAPH CONTAINS AT LEAST ONE APANNING TREE.
+**SPANNING TREE**: IS A TREE CONTAINING ALL NODES OF A GRAPH. Is created by selecting a closed walk from a graph that is not a tree and then removing an edge from this walk. This principle is used in electricity systems for instance, because if a line(edge)fails the system still works.
+--- EVERY CONNECTED GRAPH CONTAINS AT LEAST ONE SPANNING TREE.
 --- YOU CAN CALCULATE THE MAXIMUM NUMBER OF COMBINATIONS OF SPANNING TREES OF A GRAPH Kn:   total=n^(n-2)
 The name of this formula is Cayley's formula.
 
 
 
 
-
-breadth
-
-
-
-
-
-
-
-
-
-Incidence Matrix: A matrix representing connections between vertices and edges in a graph.
-
-
-
-Cycle: A closed walk in a graph where the first and last vertices are the same, and edges are not repeated (except for the edge connecting the first and last vertices).
-
-Eulerian Cycle: A cycle that traverses all edges of a graph exactly once. The graph must be connected.
-
-Connected Graph: A graph in which there is at least one path between any pair of vertices.
-
-Disconnected Graph: A graph consisting of two or more connected components, with no path between these components.
-
-Breadth-First Search (BFS): An algorithm for traversing or searching graphs, where you explore all neighbors of a vertex before moving on to the neighbors of neighbors.
-
-Depth-First Search (DFS): An algorithm for traversing or searching graphs, where you explore as far as possible along each branch before backtracking.
-
-Minimum Spanning Tree: In a weighted graph, a minimum spanning tree is a tree that includes all vertices of the graph, with the total weight of edges minimized.
-
-
-Bipartite Graph: A graph whose vertices can be divided into two sets, such that all edges connect a vertex from one set to the other.
-
-Dijkstra's Algorithm: An algorithm for finding the shortest paths between a source vertex and all other vertices in a weighted graph.
-
-Weighted Graph: A graph in which each edge has an associated weight reflecting some measure, such as distance, cost, time, etc.
-
-Hamiltonian Cycle: A cycle that visits each vertex in a graph exactly once, but not necessarily all edges.
-
-Spanning Tree: A substructure of a graph that is a tree, connecting all vertices of the original graph.
-
-Eulerian Graph: A graph that contains an Eulerian cycle. Each vertex must have an even degree.
-
-Shortest Path: The path with the smallest weight between two vertices in a weighted graph.
-
-Cyclic Graph: A graph that contains at least one cycle.
-
-Minimum Cut: A set of edges whose removal divides a graph into two connected components.
-
-Maximum Flow: The maximum value of flow that can pass from a source to a destination in a weighted graph.
-
-Four Color Theorem: States that any planar map can be colored with at most four colors such that adjacent countries have different colors.
-
-Kruskal's Minimum Spanning Tree Theorem: A method for finding a minimum spanning tree in a weighted graph.
-
-
-Degree Sequence: A list of the degrees of the vertices in a graph.
-
-Directed Acyclic Graph (DAG): A directed graph that does not contain cycles.
-
-Eulerian Path: A walk that traverses each edge of a graph exactly once.
-
-Game Theory in Graphs: Studies strategies and competitive interactions between different entities in a graph.
-
-Interval Graph: A graph representing intervals on the real line, where vertices represent intervals and edges indicate overlaps.
-
-Preference Graph: Used to model preference relations between different objects or entities.
-
-Ore's Theorem: A theorem that establishes a sufficient condition for the existence of a Hamiltonian cycle in an undirected graph.
-
-Cayley Graph: A graph associated with a group, where group elements correspond to vertices and group operations correspond to edges.
-
-Matroid: An abstract mathematical structure that generalizes fundamental properties of minimum spanning trees and independent sets in graphs.
-
-Perfect Graph: A graph in which the chromatic number of any subgraph is equal to its maximum clique number.
-
-Chromatic Number: The smallest number of colors needed to color the vertices of a graph such that adjacent vertices have different colors.
-
-Interval-Partition Graph: A graph formed by the union of intervals on a real line, where intersection occurs only between interval endpoints.
-
-Hyperbolic Graph: A graph used to model complex networks, such as social networks, exhibiting hyperbolic characteristics in their structure.
-
-Sparse Graph: Due to the often sparse nature of real-world graphs, representing adjacency and incidence matrices as sparse matrices can save storage space.
-
-Maximum Flow Theorem: The value of the determinant of a matrix obtained by removing any row and the corresponding column of a Laplacian matrix is equal to the number of minimum spanning trees in the graph.
-
-    
-
-
-
-
-
-########### GRAFO EULERIANO #############
-
-* Teoremas auxiliares para resolução:
-- 1 - Seja S a soma dos graus de todos os vértices de um grafo G, temos que S é o dobro da quantidades de arestas deste grafo, portando S é par.
-- 2 - Todo grafo G possui um número par de vértices de grau ímpar (ou nenhum), é impossível haver uma quantidade impar de vértices com grau ímpar, pois se não quebra o teorema 1.
-
-
-UM GRAFO SERÁ EULERIANO QUANDO EXISTE UMA TRILHA FECHADA (não repete arestas / começa e termina no mesmo vértice) QUE PASSA POR TODAS AS ARESTAS DE G E SE E SOMENTE SE TODOS OS NÓS TEM GRAU PAR.
-
-UM GRAFO SERÁ SEMI-EULERIANO É QUANDO EXISTE UMA TRILHA QUE PASSA POR TODAS AS ARESTAS SEM REPETIR TAMBÉM, MAS ELE COMEÇA E TERMINA EM VÉRTICES DIFERENTES. SERÁ SEMI EULERIANO SE O SEOMENTE SE TIVER DOIS VÉRTICES DE GRAU ÍMPAR.
-
-****TEOREMA DE EULER (1736): Um grafo conexo G é Euleriano se, e somente se, todos seus vértices tem grau par.
-
-* Teorema semi-euleriano: Um grafo conexo G é semieuleriano se, e somente se, G tem dois vértices de grau ímpar. Para este dar certo você deve iniciar em uma aresta de grau impar e terminar na outra aresta de grau ímpar.
-
-No grafo em que o número de arestas com grau ímpar for maior que 2 é impossível passar por todas as arestas sem repetição, portanto ele NÃO É EULERIANO NEM SEMIEULERIANO.
-
-
-===================== GRAFO HAMILTONIANO =========
-
-CICLO HAMILTONIANO = UM CICLO (não repete arestas , não repete vértice exceto  a primeira pois é a mesma onde termina) que passa por todos os vértices de um grafo G.
-GRAFO HAMILTONIANO = Um grafo será hamiltoniano quando pode existir um ciclo hamiltonia nele.
-
-O PROBLEMA É QUE O GRAFO HAMILTONIANO É NÃO POLINOMIAL-COMPLETO
-
-ESTA TEORIA ILUSTRA O PROBLEMA DO CAIXEIRO VIAJANTE. ELE PREVISA PASSAR POR TODAS AS CASAS (ARESTAS) SEM REPETI-LAS, MAS NÃO NECESSARIAMENTE PRECISA PASSAR TODAS AS RUAS.
-
-
-///////////////// GRAFO VALORADO / PONDERADO \\\\\\\\\\\\\\\\\\\\\\\\\
-
-É o grafo que possui um peso, valor atribuído para cada aresta, esse valor pode indicar distâncias, tempos, custos, etc.
-
-pode-se criar uma MATRIZ DE DISTÂNCIAS onde cada valor Gij é preenchido com a distancia entre os vértices, e assim como toda matriz de gráfo se o grafo não for direcionado a matriz será simética em relação à diagonal principal, e se não houver loops a diagonal principal é toda zero. Quando não há ligação doreta entre as arespas pode-se preencher com zero também.
-
-
-
-========== ALGORITMO DE DIJKSTRA =================
-É o algoritmo que determina o caminho "mais curto/com menor custo" num grafo com arestas de peso não negativo em tempo polinomial.
-
-
-
-
-
-
-
-$$$$$$$$$$$$$$$$ PROBLEMA DO CAIXEIRO VIAJANTE $$$$$$$$$$$$$$$
-Dado um grafo valorado G, desejamos determinar o valor do menor ciclo hamiltoniano, ou seja, passa por todos os vertives sem repetir aresta e o único vértice que se repete é o inical pois termina-se neste, todos os outros não pode repetir também. Ou seja, deve-se visitar todos os vertices sem repetir, aresta nem vertice e terminar no mesmo ponto que se iniciou e percorrer a menor distancia/valor possível.
-
-
-
-
-
-
-========================GRAFO PLANAR ===========================
-
-GRAFO BIPARTIDO (BIGAFO)= é o grafo cujo os vértices podem ser divididos em dois conjuntos distindos U e V tais que TODA ARESTA conecta um vértice U a um vertice V. U e V são sets sem conecção interna entre si.
-o grafo bipartido completo é aquele onde todos os elementos de U tem uma conecção com todos elementos de V. pode ser denotado como K3,5 (a virgula mostra que ele é bipartido)  por exemplo quando é um conjunto com 3 vertices e o outro com 4 e todas as ligaçõe possíveis entre ambos os sets foir feita.
-
-
-GRAFO PLANAR = Aquele que pode ser desenhado 2D sem que haja cruzamento de suas arestas. Caso contrário é dito grafo Não-Planar.
-Pode-se mudar os vertices de lugar, desde que não se mecha no grau. ex o grafo de um cubo 3d pode ser desenhado planar 2d.
-todo grafo k2 ou k3 ou k4 ou toda árvore É planar.
-
-***** TEOREMA DA RELAÇÃO DE EULER = A quatidade de Faces de um grafo planar pode ser calculada como: faces = aresta - vertices + 2
-f=a-v+2
-lembrando que a área externa conta como face... e este é um teorema para grafo em sua forma planar.. se houver cruzamento de aresta ele não vale
-
-****1º TEOREMA PARA DESCOBRIR SE É PLANAR = se o grafo G é planar então é valida a seguinte relação:
-a<= 3*v-6
-SE der = é porque G é MAXIMAL PLANAR, ou seja, se add uma nova aresta fica impossível ele ser planar.
-Se der falso então com certeza Não é planar... porém há grafos não planares que conseguem o resultado verdadeiro neste teorema, portando existe a segunda parte:
-
-*** 2º TEOREMA PARA DESCOBRIR SE É PLANAR = TEOREMA DA CONTRAPOSIÇÃO.
-Lembrando da logica de contraposição que (a=>b) <=> (!b => !a) 
-portanto se aplicar a negação da formula do teorema 1 o resultado precisa ser a negação do resultado, portante negar a formula gera resultado Não planar.
-
-se     a>3*v-6 então o grafo não é planar.
-Então quando o grafo passar pelo primeiro teorema como positivo para planar, faça a contraprova para ter certeza.
-Porém atenção que grafos bipartidos enganam esses dois teoremas e geram resultados errados, desta forma deve-se usar o teorema 3.
-
-***** 3º TEOREMA PARA BIPARTIDOS PLANARES = Se um grafo bipartido É planar a seguinte relação é valida:    a<= 2*v-4
-
-A contraposição deste teorema também vale como prova então
-se a>2*v-4 for verdade então o grafo NÃO é planar bipartido.
-por ex o grafo K3,3 da brincadeira de criança de ligar 3 casas à linha de telefone, luz e água sem cruzar as linhas é comprovadamente imposssível pelo teorema 3 da contraposição
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+...
+...
+...
