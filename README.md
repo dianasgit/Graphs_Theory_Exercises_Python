@@ -322,8 +322,8 @@ THE TOTAL OF NODES IN A COMPLETE  BINARY TREE = (2ĥ+1)-1     where h is the hei
 The three main sequence to traverse binary trees --> systematic walk with recursive algorithm to "visit" all nodes:
 
              A
-        B         C
-     D     E     F
+        B        C
+      D   E    F
     G
 
 **** PRÉ-ORDER (node-left-right = NLR): First you visit a node, after you visit its children first left then right.
@@ -352,6 +352,26 @@ PreOrder Algoritm (bin.tree.root p)
           SimOrder.GO (p.right)
 //The result printed will be in ascending numerical order if it was a binary numerical tree organizes. In this case will print: G D B E A F C
 
+
+*** BINARY SEARCH TREE: Is a binary tree where each data (node) has a key to identifies and allows the data to be found quickly.
+---- LEFT descendent: smaller
+---- RIGHT descendent: larger.
+If print IN-ORDER the key are output in ascendin order.
+If print POST-ORDER the key are output the values os both subtrees before the root.
+If print PRÉ-ORDER the root key are output first, before the subtrees. 
+IN BINARY SERACH TREE THE OPERATIONS OF SEARCH, INSERT, REMOVE, ETC CAN BE PERFORMED RECURSIVELLY.
+
+
+*** SPANNING TREE *** IS A TREE CONTAINING ALL NODES OF A GRAPH. Is created selecting a closed walk from a graph how is not a tree and than removing an edge from this walk. This principle is used in electricity systems for instance, because if a line(edge)fails the system still works.
+--- EVERY CONNECTED GRAPH CONTAINS AT LEAST ONE APANNING TREE.
+--- YOU CAN CALCULATE THE MAXIMUM NUMBER OF COMBINATIONS OF SPANNING TREES OF A GRAPH Kn:   total=n^(n-2)
+The name of this formula is Cayley's formula.
+
+
+
+
+
+breadth
 
 
 
