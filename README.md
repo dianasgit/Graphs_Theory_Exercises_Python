@@ -1,64 +1,65 @@
-# MATRIX #
+# Theorical foundation of Matrix, Graphs, and Trees #
 
-TRANSPOSITION = is created by turning/swapping rows into columns and columns into rows.
+--- This READ-ME document contains my annotations in matrices, graphs, and trees from my theoretical studies. I will add some of my Python exercises about those subjects in this repository. 
 
-mx1 = column vector.
-1xn = row vector.
 
-All matrix vector without the transposition sign ARE column vector... they will only be a row vector when it has the transposition sign.
+## __MATRIX__ ## 
 
-DIAGONAL MATRIX = all elements outside the main diagonal are zero. The main diagonal can be ani number, even zero. The all zero matrix is a special type of diagonal matrix
+**TRANSPOSITION** = is created by turning/swapping rows into columns and columns into rows.
 
-TRIANGULAR MATRIX = is upper triangular if the upper of the main diagonal are numbers and the bottom is all zero, end lower triangular otherwise.
+m x 1 = column vector
+1 x n = row vector
 
-IDENTITY MATRIX = is a Diagonal matrix where all elements in the main diagonal are = 1. Is denoted by E.
+All matrix vectors without the transposition sign ARE COLUMN VECTOR... They will only be a row vector when it has the transposition sign.
 
-SIMETRIC MATRIX = If you transpose a matrix and it maintains the same ->  A = At. The matrix must be square!
-Every square diagonal and all square Identy are symmetric.
+**DIAGONAL MATRIX** = all elements outside the main diagonal are zero. The main diagonal can be any number, even zero. The all-zero matrix is a special type of diagonal matrix
 
-SKEW-SIMETRIC =  A = -At
+**TRIANGULAR MATRIX** = is upper triangular if the upper part of the main diagonal is different than zero and the bottom is all zero ... end lower triangular otherwise.
 
-ADITION OF MATRIX = just add elements of the same position.
+**IDENTITY MATRIX** = is a Diagonal matrix where all elements in the main diagonal are = 1 and all others are =0.  Is denoted by E.
 
-IN ADDITION THOSE LAWS APPLIE:
+**SIMETRIC MATRIX** = If you transpose a matrix and it maintains the same ->  A = At. To be simetric the matrix must be square! Every square diagonal and all square Identy are symmetric.
+
+**SKEW-SIMETRIC** =    A = -At
+
+**ADITION OF MATRIX** = Just add elements of the same position.
+IN ADDITION, THOSE LAWS APPLY:
 *COMMUTATIVE: A+B= B+A
 *ASSOCIATIVE: A+(B+C) = (A+B)+C
-*ZERO MATRIX IS THE NEUTRAL ELEMENT IN ADITION: A+0 = O+A = A
+*ZERO MATRIX IS THE NEUTRAL ELEMENT IN ADDITION: A+0 = O+A = A
 
 
-SCALAR MULTIPLICATION = it just multiply each element of the matrix by a scalar (any real number different then zero). The following laws applied:
+**SCALAR MULTIPLICATION** = It just multiplies each element of the matrix by a scalar (any real number different than zero). The following laws applied:
 *COMMUTATIVE: x*A = A*x
 *ASSOCIATIVE: (x*y)*A = x* (y*A)
 *DISTRIBUTIVE: (x+y)*A = x*A+ y*A
-or     x*(A+B) = x*A + x*B    
+or             x*(A+B) = x*A + x*B    
 The neutral scalar is the number 1. The scalar 0 will return a zero matrix.
     
 
-DECOMPOSITION THEOREM: ANY Square matrix A can be represented by the sum of A = B+C where B is symetric and C is skew-symetric of A.
-B= 0,5*(A+At)
-C= 0,5*(A-At)
+**DECOMPOSITION THEOREM** = ANY Square matrix A can be represented by the sum of A = B+C where B is symmetric and C is skew-symmetric of A.
+symetric -------->  B= 0,5*(A+At)
+skew-symmetric -->  C= 0,5*(A-At)
 
     
-DOT PRODUCT OF VECTORS: If a row vector is multiplied by a column vector, and you multiplie each correspond index and add one to another you will find out an real number = Scalar. Only applies to vectors with the same index. IN THIS CASE, COMMUTATIVE LAW APPLIES. at*b = bt*a. DIstributive law too.
+**DOT PRODUCT OF VECTORS** = If a row vector is multiplied by a column vector, and you multiply each corresponding index and add all results to another you will find out a real number = Scalar. It only applies to vectors with the same index. IN THIS CASE, COMMUTATIVE LAW APPLIES. at*b = bt*a. Distributive law too.
 
 
-MULTIPLICATION OF MATRICES: The number of columns of the first must be the same as the number of lines of the second because the multiplication is YOU MULTIPLY EACH ELEMENT OF THE FIRST WITH THE SAME ELEMENT-COLUMN-INDEX OF THE SECOND AND SUM.
-*DIagonal matrices (all zero except the main diagonal) play an important role in multiplication because depending on the order of the multiplication the main diagonal will alter the row or the columns of the matrix result.
+**MULTIPLICATION OF MATRICES** = The number of columns of the first must be the same as the number of lines of the second because the multiplication is: MULTIPLY EACH ROW ELEMENT OF THE FIRST WITH THE SAME COLUMN-INDEX ELEMENT OF THE SECOND AND SUM ALL RESULTS.
+*Diagonal matrices (all zero except the main diagonal) play an important role in multiplication because depending on the order of the multiplication the main diagonal will alter the row or the columns of the matrix result.
+    *LAWS OF MULTIPLICATION:
+        - ASSOCIATIVE: (A*B)*C = A*(B*C)
+        - DISTRIBUTIVE: A*(B+C) = A*B + A*C
+        - IDENTITY:  A*E = A
+        - ZERO MATRIX = O --> A*0 = 0
+        - SCALAR MULTIPLICATION WITH AN IDENTITY MATRIX MULTIPLICATION:  x*A = (x*E)*A
+        - POWER MATRIX CAN BE SIMPLIFIED:    A^s+t = A^s*A^t
+                                              A^s*t = (A^s)^t
 *THE NEUTRAL ELEMENT IN MATRIX MULTIPLICATION IS THE IDENTITY MATRIX. A*E = E*A = A
-*LAWS OF MULTIPLICATION:
-- ASSOCIATIVE: (A*B)*C = A*(B*C)
-- DISTRIBUTIVE: A*(B+C) = A*B + A*C
-- IDENTITY:  A*E = A
-- ZERO MATRIX = O --> A*0 = 0
-- SCALAR MULTIPLICATION WITH AN IDENTITY MATRIX MULTIPLICATION:  x*A = (x*E)*A
-- POWER MATRIX CAN BE SIMPLIFIED:    A^s+t = A^s*A^t
-                                      A^s*t = (A^s)^t
-*****ATENTION: commutative law generally NOT apply to multiplication of matrices because   A*B != B*A
+**ATTENTION**: commutative law generally does NOT apply to the multiplication of matrices because   A*B != B*A
 
 
-
-
-***********LAWS OF TRANSPOSITION************
+**LAWS OF TRANSPOSITION**
 * (At)t = A
 * (A+B)t = At + Bt
 * (x*A)t = x*At
@@ -66,73 +67,71 @@ MULTIPLICATION OF MATRICES: The number of columns of the first must be the same 
 * Et = E
 
 
-    ********************INVERSE/REGULAR MATRICES ***********************
+**INVERSE/REGULAR MATRICES** = Every real number x other than zero has an inverse value = (x^-1), and when the inverse is multiplied by x the result must be = 1. The inverse can be found as    1/x = x^-1
+**An inverse matrix MAY exist only for square matrices. Not every square matrix has an inverse.**
+The multiplication of a matrix by its inverse = identity:   A*A^-1 = A^-1*A = E
+IF THE INVERSE MATRIX EXISTS THE MATRIX IS CALLED INVERTIBLE OU REGULAR. If not if called non-invertible or singular.
 
-    Every real number x other than zero has a inverse value (x^-1), and when the inverse is multiplied by x the result must be = 1.
-  The inverse can be found as    1/x = x^-1
-  An inverse matrix MAY exist only for square matrices. Not every square matrix has as inverse.
-  The multiplication of a matrix by its inverse is equal to the identity:   A*A^-1 = A^-1*A = E
-  IF THE INVERSE MATRIX EXISTS THE MATRIX IS CALLED INVERTIBLE OU REGULAR. If not if called non-invertible or singular.
-
-    IF THE DETERMINANTE IS DIFFERENT THAN ZERO THE MATRIX IS INVERTIBLE, because it represent that the rows or columns of the matrix are linearly independent.
-      If the determinant = 0 than the matrix is NOT invertible.
+**IF THE DETERMINANTE IS DIFFERENT THAN ZERO THAN THE MATRIX IS INVERTIBLE because it represents that the rows or columns of the matrix are linearly independent.**
+**If the determinant = 0 then the matrix is NOT invertible.**
 
     1  2  3       1  2  3  | 1  2         the determinante is=   x-y
     4  5  6       4  5  6  | 4  5          1*5*9  + 2*6*7 + 3*4*8 = x
     7  8  9       7  8  9  | 7  8          3*5*7  + 1*6*8  + 2*4*9 = y
 
-In 2x2 matrices to calculate the inverse (if the det != 0) just exchange the elementos on the main diagonal and reserse the sign (*-1) the elements of the second diagonal. And divide each element of the matrix by the determinant (divide because is the inverse of the determinant that matters 1/det and multiplay 1/det id the same as directly divide by the det.)
-*An square diagonal matrix can be inverse if all elements of the main diagonal are !=0 and to invert you just need the invert each element of the main diagonal separately, i.e, just put each one in the form of 1/x. A triangular uper or lower is also invertible if the main diagonal has NO zero element (if it has a zero the determinant will be also zero)
-***GENERAL LAWS:
-- Inversion and trasposition are interchangeable: (At)^-1 = (A^-1)t
-- IF A is simetric then A^-1 is also simmetric
+In 2x2 matrices to calculate the inverse (if the det != 0) just invert the order of the elements on the main diagonal and invert the sign (*-1) of the elements on the second diagonal. Divide each element of the matrix by the determinant (divide because is the inverse of the determinant that matters 1/det (multiplay 1/det is the same as directly dividing by the det.)
+**An square diagonal matrix can be inverse if all elements of the main diagonal are !=0 and to invert you just need the invert each element of the main diagonal separately,** i.e., just put each one in the form of 1/x. 
+A triangular upper or lower is also invertible if the main diagonal has NO zero element (if it has a zero the determinant will be also zero) so it is not invertible.
+**GENERAL LAWS**:
+- Inversion and transposition are interchangeable: (At)^-1 = (A^-1)t
+- IF A is symmetric then A^-1 is also symmetric
 - Shock-shoe rule:  (A*B)^-1 = B^-1*A^-1
 
-**SIMETRICAL ENCRYPTION PROCEDURE = multiply a message by a matrix to encrypt and multiply the result by the inverse of the matrix key to decrypt. 
-***
+**SIMETRICAL ENCRYPTION PROCEDURE** = multiply a message by a matrix to encrypt and multiply the result by the inverse of the matrix key to decrypt. 
 
- ***********ORTHOGONAL MATRICES *************
-        A square matrix is called oRTHOGONAL IF, AND ONLY IF A^-1 = At.. For a Orthogonal matrix A, At is also orthogonal... So ALSO APPLIES  A * At = A * A^-1 = E
-  IF the matrix is SIMETRIC = A * A =E
+
+**ORTHOGONAL MATRICES** = A square matrix is called ORTHOGONAL IF, AND ONLY IF A^-1 = At 
+For a Orthogonal matrix A, At is also orthogonal... So ALSO APPLIES  A * At = A * A^-1 = E
+IF the matrix is SIMETRIC = A * A = E
 
         
 
-# _____________INTRODUCTION TO GRAPHS___________ #
+##__INTRODUCTION TO GRAPHS__##
 
-Graph: A graph is a collection of vertices (or nodes) and edges that connect pairs of vertices. Graphs can be directed (edges have a direction) or undirected.
+**Graph**: A graph is a collection of vertices (or nodes) and edges that connect pairs of nodes. Graphs can be directed (edges have a direction) or undirected.
 
-EDGE: A line that connects vertices (nodes) in a graph;
+**EDGE**: A line that connects vertices (nodes) in a graph;
 
-UNDIRECTED Graph: A graph in which edges do not have a specific direction;  G = ( V , E) whit a set of finite nodes V={v1,v2,...vn} and set of edges E={e1,e2,...em}. V CAN NOT BE AN EMPTY SET, it need at least onde node. 
+**UNDIRECTED Graph**: A graph in which edges do not have a specific direction;  G = ( V , E) with a set of finite nodes V={v1,v2,...vn} and set of edges E={e1,e2,...em}. V CAN NOT BE AN EMPTY SET, it needs at least one node. 
 
-DIRECTED GRAPH: A graph in which each edge has a direction, indicating the order of connected vertices;
+**DIRECTED GRAPH**: A graph in which each edge has a direction, indicating the order of connected vertices;
 
-ISOLATED NODE= a node that is not connected to any other node by an edge.
+**ISOLATED NODE** = a node that is not connected to any other node by an edge.
 
-ADJACENT NODES / NEIGHBORS: Nodes that are directly connected by the same edge. In a loop, the node is its own neighbor. 
+**ADJACENT NODES / NEIGHBORS**: Nodes that are directly connected by the same edge. In a loop, the node is its own neighbor. 
 
-INCIDENT EDGE: the edge that connect a node(s) in question. You say, edge E is incident to the node v1 and v2 ...
+**INCIDENT EDGE**: the edge that connects a node(s) in question. You say, edge E is incident to the node v1 and v2 ...
 
-PARALLEL EDGE or MULTIPLE EDGER: Connect the same two nodes;
+**PARALLEL EDGE or MULTIPLE EDGES**: Connect the same two nodes;
 
-LOOP: the edge that connect a node to itself
+**LOOP**: the edge that connects a node to itself
 
-** SIMPLE GRAPH: NO parallel edges (multiple edges) and NO Loops.
+**SIMPLE GRAPH**: NO parallel edges (multiple edges) and NO Loops.
 
-FINITE GRAPH: A graph with a finite number of nodes and edges.
+**FINITE GRAPH**: A graph with a finite number of nodes and edges.
 
-INCIDENCE FUNCTION: The nodes or nod that is connected to an edge. Write it as:   e1 |-> {v2, v4)  ; e2|-> {v5}loop
+**INCIDENCE FUNCTION**: The node(s) that is/are connected to an edge. Write it as:   e1 |-> {v2, v4)  ; e2|-> {v5}loop
 
-DEGREE OF A NODE or VALENCE or NODE DEGREE: the total of edges incident/connected to a node, or START in that node. Isolated nodes have degree 0. Loops count 2. 
+**DEGREE OF A NODE or VALENCE or NODE DEGREE**: the total of edges incident/connected to a node, or START in that node. Isolated nodes have degree 0. Loops count 2. 
 
-REGULAR GRAPH = a graph where every node has the same degree. An exemple is the Petersen graph where every node has degree 3, and can be called "regular of degree 3". 
+**REGULAR GRAPH** = a graph where every node has the same degree. An example is the Petersen graph where every node has degree 3, and can be called "regular of degree 3". 
 
-*** HANDSHAKING LEMMA: Euler state that: In any FINITE AND UNDIRECTED AND SIMPLE graph the sum of all nodes degrees is twice the number of edges.
+**HANDSHAKING LEMMA**: Euler states that: In any FINITE AND UNDIRECTED AND SIMPLE graph the sum of all nodes degrees is twice the number of edges.
 THAN THE SUM OF ALL NODES DEGREES MUST BE EVEN. AND in every finite, undirectec and simple graph must exist at leat two nodes with the same degree.
 Exemple is impossible to draw a graph with 7 nodes whet all nodes has degree 3 .. because de sum will be 21, an odd number.
 Is also impossible draw a graph with 4 nodes with the respective degrees (1 , 2 , 3 , 4) the sum is even, BUT is impossible because must exist at least two nodes with the same degree.
 
-***ISOMORPHIC GRAPHS: Two graph are called isomorphic if it exists a bijective mapping in each node. They contain the same number of node, edges and degrees. BUT is necessary to make the mapping to guarantee the exact relation of connections, because a graph with the same number of nodes, and edges and degree could not be isomorphic.
+**ISOMORPHIC GRAPHS**: Two graph are called isomorphic if it exists a bijective mapping in each node. They contain the same number of node, edges and degrees. BUT is necessary to make the mapping to guarantee the exact relation of connections, because a graph with the same number of nodes, and edges and degree could not be isomorphic.
 
 SUBGRAPH: A graph formed by a subset of vertices and edges from a larger graph.
 
